@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid : MonoBehaviour
+public class GridManager : MonoBehaviour
 {
     public float cellSize = 64.0f;
+    public Transform tilePrefab;
+    public TileSet tileSet;
 
     public Color gridGizmoColor = Color.white;
 
