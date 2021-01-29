@@ -12,10 +12,140 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: 518027242534886886}
+  - {fileID: 3080195786320940523}
+  - {fileID: 2829608678791525521}
+  - {fileID: 7770857239941333726}
+  EditorEvents:
+  - {fileID: 1418634975742524313}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
-  stringsBankWriteTime: 0
+  MasterBanks:
+  - {fileID: 3080195786320940523}
+  StringsBanks:
+  - {fileID: 518027242534886886}
+  stringsBankWriteTime: 637475560792434580
   cacheVersion: 6
+--- !u!114 &518027242534886886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637475560792434580
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 852
+  Exists: 1
+--- !u!114 &1418634975742524313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ambiance
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ambiance
+  guid: 968e74b8ffbcbf4982b9b6f9918542f8
+  Banks:
+  - {fileID: 7770857239941333726}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 184000
+--- !u!114 &2115329525114225963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance
+  guid: 968e74b8ffbcbf4982b9b6f9918542f8
+  Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 184000
+--- !u!114 &2829608678791525521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music_Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../GGJ_FMOD_Project/Build/Desktop/Music_Bank.bank
+  Name: Music_Bank
+  StudioPath: bank:/Music_Bank
+  lastModified: 637475560792434580
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3080195786320940523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../GGJ_FMOD_Project/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637475560792434580
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7770857239941333726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX_Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
+  Name: SFX_Bank
+  StudioPath: bank:/SFX_Bank
+  lastModified: 637475560792614101
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
