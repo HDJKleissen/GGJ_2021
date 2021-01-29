@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class RunMechanic : MechanicBase
 {
-    public float MoveSpeedModifier;
+    public float RunSpeedModifier;
 
     public override void SetupMechanic(Player player)
     {
+        player.RunSpeedModifier = RunSpeedModifier;
     }
 
     public override void ApplyMechanic(Player player)
     {
-        if (Input.GetButton("Run"))
+        if (Input.GetButtonDown("Run"))
         {
-            player.MoveSpeedModifier = MoveSpeedModifier;
+            player.IsRunning = true;
+        }
+
+        if (Input.GetButtonUp("Run"))
+        {
+            player.IsRunning = false;
         }
     }
 }

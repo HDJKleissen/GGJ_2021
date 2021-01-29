@@ -34,7 +34,7 @@ public class JumpMechanic : MechanicBase
                     }, player.JumpBufferTime));
 
                 StartCoroutine(CoroutineHelper.Chain(
-                    CoroutineHelper.WaitUntil(() => player.isGrounded),
+                    CoroutineHelper.WaitUntil(() => player.IsGrounded),
                     CoroutineHelper.Do(() => {
                         if (withinJumpBuffer)
                         {
