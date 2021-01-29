@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 3080195786320940523}
   StringsBanks:
   - {fileID: 518027242534886886}
-  stringsBankWriteTime: 637475538460000000
+  stringsBankWriteTime: 637475560792434580
   cacheVersion: 6
 --- !u!114 &518027242534886886
 MonoBehaviour:
@@ -41,7 +41,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637475538460000000
+  lastModified: 637475560792434580
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -107,7 +107,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Music_Bank.bank
   Name: Music_Bank
   StudioPath: bank:/Music_Bank
-  lastModified: 637475538460000000
+  lastModified: 637475560792434580
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637475538460000000
+  lastModified: 637475560792434580
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
   Name: SFX_Bank
   StudioPath: bank:/SFX_Bank
-  lastModified: 637475538460000000
+  lastModified: 637475560792614101
   LoadResult: 0
   FileSizes: []
   Exists: 1
