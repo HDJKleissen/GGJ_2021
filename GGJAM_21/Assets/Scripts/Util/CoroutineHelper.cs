@@ -2,15 +2,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class CoroutineHelper
+public static class CoroutineHelper
 {
     /**
-     * Usage: StartCoroutine(CoroutineUtils.Chain(...))
+     * Usage: StartCoroutine(CoroutineHelper.Chain(...))
      * For example:
-     *     StartCoroutine(CoroutineUtils.Chain(
-     *         CoroutineUtils.Do(() => Debug.Log("A")),
-     *         CoroutineUtils.WaitForSeconds(2),
-     *         CoroutineUtils.Do(() => Debug.Log("B"))));
+     *     StartCoroutine(CoroutineHelper.Chain(
+     *         CoroutineHelper.Do(() => Debug.Log("A")),
+     *         CoroutineHelper.WaitForSeconds(2),
+     *         CoroutineHelper.Do(() => Debug.Log("B"))));
      */
 
     public static IEnumerator Chain(params IEnumerator[] actions)
@@ -22,11 +22,10 @@ public class CoroutineHelper
     }
 
     /**
-     * Usage: StartCoroutine(CoroutineUtils.WaitForSeconds(seconds))
+     * Usage: StartCoroutine(CoroutineHelper.WaitForSeconds(seconds))
     */
     public static IEnumerator DelaySeconds(Action action, float delay)
     {
-        Debug.Log("aaaaaaaaaaaa");
         yield return new WaitForSeconds(delay);
         action();
     }

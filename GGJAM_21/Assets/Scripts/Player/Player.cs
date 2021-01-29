@@ -7,9 +7,11 @@ public class Player : MonoBehaviour
     // Just some test vars
     public int MaxJumps;
     public int JumpsRemaining = 0;
-    public float JumpGraceTimer;
+    public float JumpGraceTime;
+    public float JumpBufferTime;
+
+    public float horizontalVelocity;
     public bool isGrounded;
-    public Vector2 moveVelocity;
 
     public List<MechanicBase> mechanics = new List<MechanicBase>();
     public Transform GroundCheckTopLeft, GroundCheckBottomRight;
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveVelocity = Vector2.zero;
+        horizontalVelocity = 0;
 
         foreach (MechanicBase mechanic in mechanics)
         {
@@ -38,30 +40,43 @@ public class Player : MonoBehaviour
             }
         }
 
-        playerRigidBody.velocity = new Vector2(moveVelocity.x, moveVelocity.y == 0 ? playerRigidBody.velocity.y : moveVelocity.y);
+        playerRigidBody.velocity = new Vector2(horizontalVelocity, playerRigidBody.velocity.y);
     }
 
     void FixedUpdate()
     {
         bool previousIsGrounded = isGrounded;
         isGrounded = Physics2D.OverlapArea(GroundCheckTopLeft.position, GroundCheckBottomRight.position, GroundLayer);
-        // Did we change from air to ground?
-        if (isGrounded && isGrounded != previousIsGrounded)
+        // Did we change between air and ground?
+        if (isGrounded != previousIsGrounded)
         {
-            JumpsRemaining = MaxJumps;
-        }
-        // If not, did we change from ground to air (so we jumped, or fell of the side of a platform)
-        else if (!isGrounded && isGrounded != previousIsGrounded)
-        {
-            StartCoroutine(CoroutineHelper.DelaySeconds(() =>
-                {
-                    // We didnt jump
-                    if (JumpsRemaining == MaxJumps && !isGrounded)
+            // Landed on the ground, so reset jump amount
+            if (isGrounded)
+            {
+                JumpsRemaining = MaxJumps;
+            }
+            // Fell off a platform, so introduce Coyote Time
+            else
+            {
+                StartCoroutine(CoroutineHelper.DelaySeconds(() =>
                     {
-                        JumpsRemaining = MaxJumps - 1;
-                    }
-                }, JumpGraceTimer
-            ));
+                        // We didnt jump
+                        if (JumpsRemaining == MaxJumps && !isGrounded)
+                        {
+                            JumpsRemaining = MaxJumps - 1;
+                        }
+                    }, JumpGraceTime
+                ));
+            }
+        }
+    }
+
+    public void Jump(float jumpForce)
+    {
+        if (JumpsRemaining > 0)
+        {
+            JumpsRemaining--;
+            playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
         }
     }
 }

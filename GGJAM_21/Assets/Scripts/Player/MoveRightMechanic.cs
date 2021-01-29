@@ -12,10 +12,11 @@ public class MoveRightMechanic : MechanicBase
 
     public override void ApplyMechanic(Player player)
     {
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
         // TODO: Bindable keys
-        if (Input.GetKey(KeyCode.D))
+        if (horizontalInput > 0)
         {
-            player.moveVelocity += new Vector2(MoveSpeed, 0);
+            player.horizontalVelocity += horizontalInput * MoveSpeed;
         }
     }
 
