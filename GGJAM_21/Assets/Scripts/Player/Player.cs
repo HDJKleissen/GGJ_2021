@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     // Just some test vars
     public int MaxJumps;
     public int JumpsRemaining = 0;
-    public string playerName;
+    public float JumpGraceTimer;
     public bool isGrounded;
     public Vector2 moveVelocity;
 
@@ -23,11 +23,6 @@ public class Player : MonoBehaviour
         // TODO: Don't have all mechanics at start? or something
         mechanics = new List<MechanicBase>(GetComponents<MechanicBase>());
         playerRigidBody = GetComponent<Rigidbody2D>();
-
-        foreach (MechanicBase mechanic in mechanics)
-        {
-            mechanic.SetupMechanic(this);
-        }
     }
 
     // Update is called once per frame
@@ -35,14 +30,14 @@ public class Player : MonoBehaviour
     {
         moveVelocity = Vector2.zero;
 
-        foreach(MechanicBase mechanic in mechanics)
+        foreach (MechanicBase mechanic in mechanics)
         {
             if (mechanic.MechanicIsActive)
             {
                 mechanic.ApplyMechanic(this);
             }
         }
-        
+
         playerRigidBody.velocity = new Vector2(moveVelocity.x, moveVelocity.y == 0 ? playerRigidBody.velocity.y : moveVelocity.y);
     }
 
@@ -50,11 +45,23 @@ public class Player : MonoBehaviour
     {
         bool previousIsGrounded = isGrounded;
         isGrounded = Physics2D.OverlapArea(GroundCheckTopLeft.position, GroundCheckBottomRight.position, GroundLayer);
-
         // Did we change from air to ground?
         if (isGrounded && isGrounded != previousIsGrounded)
         {
             JumpsRemaining = MaxJumps;
+        }
+        // If not, did we change from ground to air (so we jumped, or fell of the side of a platform)
+        else if (!isGrounded && isGrounded != previousIsGrounded)
+        {
+            StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+                {
+                    // We didnt jump
+                    if (JumpsRemaining == MaxJumps && !isGrounded)
+                    {
+                        JumpsRemaining = MaxJumps - 1;
+                    }
+                }, JumpGraceTimer
+            ));
         }
     }
 }
