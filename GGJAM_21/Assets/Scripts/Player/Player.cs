@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     public int JumpsRemaining = 0;
     public float JumpGraceTime;
     public float JumpBufferTime;
+    public float MaxPlayerFallSpeed;
+    public float PlayerFloatSpeed;
+
+    public float MoveSpeedModifier = 1;
 
     public float horizontalVelocity;
     public bool isGrounded;
@@ -31,7 +35,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         horizontalVelocity = 0;
-
+        MoveSpeedModifier = 1;
         foreach (MechanicBase mechanic in mechanics)
         {
             if (mechanic.MechanicIsActive)
@@ -43,7 +47,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        playerRigidBody.velocity = new Vector2(horizontalVelocity, playerRigidBody.velocity.y);
+        playerRigidBody.velocity = new Vector2(horizontalVelocity * MoveSpeedModifier, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
 
         bool previousIsGrounded = isGrounded;
         isGrounded = Physics2D.OverlapArea(GroundCheckTopLeft.position, GroundCheckBottomRight.position, GroundLayer);
@@ -54,19 +58,33 @@ public class Player : MonoBehaviour
             JumpsRemaining = MaxJumps;
         }
 
-        if (!isGrounded != previousIsGrounded)
+        if (!isGrounded)
         {
-            // Fell off a platform, so introduce Coyote Time
-            StartCoroutine(CoroutineHelper.DelaySeconds(() =>
-                {
+            if (isGrounded != previousIsGrounded)
+            {
+                // Fell off a platform, so introduce Coyote Time
+                StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+                    {
                     // We didnt jump
                     if (JumpsRemaining == MaxJumps && !isGrounded)
-                    {
-                        JumpsRemaining = MaxJumps - 1;
-                    }
-                }, JumpGraceTime
-            ));
-
+                        {
+                            JumpsRemaining = MaxJumps - 1;
+                        }
+                    }, JumpGraceTime
+                ));
+            }
+            else
+            {
+                if(Input.GetButton("Jump") && Mathf.Abs(playerRigidBody.velocity.y) < PlayerFloatSpeed)
+                {
+                    // Float at the top to give the player more time to land the jump
+                    playerRigidBody.gravityScale = 2;
+                }
+                else
+                {
+                    playerRigidBody.gravityScale = 4;
+                }
+            }
         }
     }
 

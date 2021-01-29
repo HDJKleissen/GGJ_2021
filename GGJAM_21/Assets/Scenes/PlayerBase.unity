@@ -501,6 +501,8 @@ GameObject:
   - component: {fileID: 977999905}
   - component: {fileID: 977999903}
   - component: {fileID: 977999906}
+  - component: {fileID: 977999907}
+  - component: {fileID: 977999908}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -524,6 +526,9 @@ MonoBehaviour:
   JumpsRemaining: 0
   JumpGraceTime: 0.5
   JumpBufferTime: 0.2
+  MaxPlayerFallSpeed: 23
+  PlayerFloatSpeed: 6
+  MoveSpeedModifier: 1
   horizontalVelocity: 0
   isGrounded: 0
   mechanics: []
@@ -613,6 +618,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MechanicIsActive: 1
   JumpForce: 25
+--- !u!114 &977999907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977999900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9077824677f3742b0383cd0d604fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MechanicIsActive: 1
+  JumpForce: 25
+--- !u!114 &977999908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977999900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4e258d5adc71b43958c75b7541f268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MechanicIsActive: 1
+  MoveSpeedModifier: 2
 --- !u!1 &980798496
 GameObject:
   m_ObjectHideFlags: 0
