@@ -39,35 +39,34 @@ public class Player : MonoBehaviour
                 mechanic.ApplyMechanic(this);
             }
         }
-
-        playerRigidBody.velocity = new Vector2(horizontalVelocity, playerRigidBody.velocity.y);
     }
 
     void FixedUpdate()
     {
+        playerRigidBody.velocity = new Vector2(horizontalVelocity, playerRigidBody.velocity.y);
+
         bool previousIsGrounded = isGrounded;
         isGrounded = Physics2D.OverlapArea(GroundCheckTopLeft.position, GroundCheckBottomRight.position, GroundLayer);
-        // Did we change between air and ground?
-        if (isGrounded != previousIsGrounded)
+
+        // We're on the ground, so reset jump amount
+        if (isGrounded && JumpsRemaining != MaxJumps)
         {
-            // Landed on the ground, so reset jump amount
-            if (isGrounded)
-            {
-                JumpsRemaining = MaxJumps;
-            }
+            JumpsRemaining = MaxJumps;
+        }
+
+        if (!isGrounded != previousIsGrounded)
+        {
             // Fell off a platform, so introduce Coyote Time
-            else
-            {
-                StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+            StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+                {
+                    // We didnt jump
+                    if (JumpsRemaining == MaxJumps && !isGrounded)
                     {
-                        // We didnt jump
-                        if (JumpsRemaining == MaxJumps && !isGrounded)
-                        {
-                            JumpsRemaining = MaxJumps - 1;
-                        }
-                    }, JumpGraceTime
-                ));
-            }
+                        JumpsRemaining = MaxJumps - 1;
+                    }
+                }, JumpGraceTime
+            ));
+
         }
     }
 
