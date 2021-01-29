@@ -34,10 +34,13 @@ public class GridEditor : Editor
     {
         //base.OnInspectorGUI();
 
+        EditorGUILayout.HelpBox("Once the GridManager Object/attached Script is selected: Leftclick in the Scene to place tile, Right to remove a Tile. GL!", MessageType.Info);
+
         GUILayout.BeginHorizontal();
         GUILayout.Label("GridCell Size");
         grid.cellSize = EditorGUILayout.Slider(grid.cellSize, 1.0f, 128.0f, null);
         GUILayout.EndHorizontal();
+
 
         if(GUILayout.Button("Open Grid Window"))
         {
