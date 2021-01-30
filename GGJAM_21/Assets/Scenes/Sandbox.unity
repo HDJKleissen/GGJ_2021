@@ -3773,18 +3773,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1500300525, guid: 38a65f51249f9074da413ec3f5d3d2fd, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: cdadec91b143efa4f9eb8fe006226523, type: 2}
-    - target: {fileID: 57097573494091128, guid: 38a65f51249f9074da413ec3f5d3d2fd, type: 3}
-      propertyPath: DashTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1381074476561546814, guid: 38a65f51249f9074da413ec3f5d3d2fd, type: 3}
-      propertyPath: DashTime
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 7602161008589237287, guid: 38a65f51249f9074da413ec3f5d3d2fd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3833,6 +3821,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7957821957999440240, guid: 38a65f51249f9074da413ec3f5d3d2fd, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38a65f51249f9074da413ec3f5d3d2fd, type: 3}
