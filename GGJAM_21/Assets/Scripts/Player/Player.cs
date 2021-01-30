@@ -135,7 +135,11 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SpriteTransform.rotation = Quaternion.FromToRotation(transform.up, collision.contacts[0].normal);
+        if (collision.contacts[0].normal.y > 0)
+        {
+            SpriteTransform.rotation = Quaternion.FromToRotation(transform.up, collision.contacts[0].normal);
+        }
+
         if (SpriteTransform.rotation != Quaternion.identity)
         {
             SpriteTransform.localPosition = new Vector3(0, -0.3f, 0);
