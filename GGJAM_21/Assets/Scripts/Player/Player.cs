@@ -166,7 +166,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.contacts[0].normal.y > 0)
+        if (collision.contacts[0].normal.y > 0.2)
         {
             SpriteTransform.rotation = Quaternion.FromToRotation(transform.up, collision.contacts[0].normal);
         }
@@ -179,8 +179,11 @@ public class Player : MonoBehaviour
         {
             SpriteTransform.localPosition = Vector3.zero;
         }
-        
-        if(collision.gameObject.tag == "goal")
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "goal")
         {
             //go next scene
             SceneManager.LoadScene("Level2");

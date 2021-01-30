@@ -22,11 +22,10 @@ public class SwapMechanics : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("Collision found with anything");
-        if(collision.gameObject.tag == "mechanic")
+        if (collision.gameObject.tag == "mechanic")
         {
             StartCoroutine(OnPickUp(collision.gameObject.GetComponent<MechanicInstance>().mechanicName));
             Destroy(collision.gameObject);
@@ -37,8 +36,8 @@ public class SwapMechanics : MonoBehaviour
     MechanicBase GetOldestMechanic()
     {
         int smallestId = 0;
-        MechanicBase mb = player.mechanics[0];
-        foreach(MechanicBase m in player.mechanics)
+        MechanicBase mb = player.GetMechanics()[0];
+        foreach(MechanicBase m in player.GetMechanics())
         {
             //skip inactive mechanics
             if (!m.MechanicIsActive)

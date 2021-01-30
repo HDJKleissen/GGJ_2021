@@ -341,7 +341,7 @@ Animator:
   m_GameObject: {fileID: 791289577}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ae7b41d447c169a4a875679097c35b44, type: 2}
+  m_Controller: {fileID: 9100000, guid: 17211745333c8714190d0fc860973804, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -608,6 +608,7 @@ GameObject:
   - component: {fileID: 1854685709}
   - component: {fileID: 1854685708}
   - component: {fileID: 1817395617}
+  - component: {fileID: 7957821957999440240}
   m_Layer: 0
   m_Name: Leg_L
   m_TagString: Untagged
@@ -700,6 +701,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1817395617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854685706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332e85a889074765b501def6eb212aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7957821957999440240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1023,7 +1036,7 @@ Animator:
   m_GameObject: {fileID: 2009791001}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7a9928a62017b1a47963ffa429e52f03, type: 2}
+  m_Controller: {fileID: 9100000, guid: e9272bee7c558774bac85eafa70f8ee9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1090,6 +1103,9 @@ GameObject:
   - component: {fileID: 1929493590}
   - component: {fileID: 1929493591}
   - component: {fileID: 8309284229181419604}
+  - component: {fileID: 1381074476561546814}
+  - component: {fileID: 57097573494091128}
+  - component: {fileID: 1023573239671850822}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1210,6 +1226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MechanicIsActive: 0
+  pickupOrderId: 0
   JumpForce: 25
 --- !u!114 &2947885285841014053
 MonoBehaviour:
@@ -1224,6 +1241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MechanicIsActive: 0
+  pickupOrderId: 0
   JumpForce: 25
 --- !u!114 &7602161008589237288
 MonoBehaviour:
@@ -1238,6 +1256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MechanicIsActive: 1
+  pickupOrderId: 0
   MoveSpeed: 8
 --- !u!114 &7602161008589237295
 MonoBehaviour:
@@ -1252,6 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MechanicIsActive: 1
+  pickupOrderId: 0
   MoveSpeed: 8
 --- !u!114 &1929493589
 MonoBehaviour:
@@ -1266,6 +1286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MechanicIsActive: 0
+  pickupOrderId: 0
   DashSpeed: 20
   DashTime: 0.3
   DashCooldownTime: 0.3
@@ -1282,6 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MechanicIsActive: 0
+  pickupOrderId: 0
   DashSpeed: 20
   DashTime: 0.3
   DashCooldownTime: 0.3
@@ -1297,6 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d3165cfdd2e5b458c7db26f614e2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMechanics: 3
 --- !u!114 &1929493591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,4 +1353,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MechanicIsActive: 0
+  pickupOrderId: 0
   RunSpeedModifier: 2
+--- !u!114 &1381074476561546814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602161008589237287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b83093023420974b88b1eea431d8d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MechanicIsActive: 0
+  pickupOrderId: 0
+  DashSpeed: 20
+  DashTime: 0.3
+  DashCooldownTime: 0.5
+--- !u!114 &57097573494091128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602161008589237287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4342ea0d41190349b07edd7c2c51bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MechanicIsActive: 0
+  pickupOrderId: 0
+  DashSpeed: 20
+  DashTime: 0.3
+  DashCooldownTime: 0.5
+--- !u!114 &1023573239671850822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602161008589237287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d3165cfdd2e5b458c7db26f614e2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMechanics: 3
