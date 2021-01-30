@@ -19,8 +19,7 @@ public class JumpMechanic : MechanicBase
 
     public override void ApplyMechanic(Player player)
     {
-        // TODO: Bindable keys
-        if (Input.GetButtonDown(MechanicButton))
+        if (GameInputManager.GetKeyDown(MechanicButton))
         {
             // We have a jump remaining, jump immediately
             if (player.JumpsRemaining > 0)
