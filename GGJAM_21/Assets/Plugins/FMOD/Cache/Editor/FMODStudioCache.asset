@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 3080195786320940523}
   StringsBanks:
   - {fileID: 518027242534886886}
-  stringsBankWriteTime: 637475646387581202
+  stringsBankWriteTime: 637475959283152816
   cacheVersion: 6
 --- !u!114 &518027242534886886
 MonoBehaviour:
@@ -42,11 +42,11 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637475646387581202
+  lastModified: 637475959283152816
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 900
+    Value: 952
   Exists: 1
 --- !u!114 &1418634975742524313
 MonoBehaviour:
@@ -131,6 +131,26 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &5257856423646405465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6323825406355286523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +170,8 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 5257856423646405465}
   MinDistance: 0
   MaxDistance: 0
   Length: 183
@@ -169,7 +190,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
   Name: SFX_Bank
   StudioPath: bank:/SFX_Bank
-  lastModified: 637475646387770686
+  lastModified: 637475959283442134
   LoadResult: 0
   FileSizes: []
   Exists: 1
