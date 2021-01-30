@@ -1,24 +1,25 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System;
 
 public static class GameInputManager
 {
     public static Dictionary<string, KeyCode> keyMapping;
-    public static string[] keyMaps = new string[6]
+    public static string[] keyMaps = new string[]
     {
         "MoveLeft",
         "MoveRight",
         "Jump",
+        "DoubleJump",
         "Dash",
         "BackDash",
         "Right"
     };
-    public static KeyCode[] defaults = new KeyCode[6]
+    public static KeyCode[] defaults = new KeyCode[]
     {
         KeyCode.A,
         KeyCode.D,
+        KeyCode.S,
         KeyCode.S,
         KeyCode.Z,
         KeyCode.X,

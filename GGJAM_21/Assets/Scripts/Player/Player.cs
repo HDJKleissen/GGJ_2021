@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -15,31 +15,64 @@ public class Player : MonoBehaviour
     public float RunSpeedModifier = 0;
     [HideInInspector]
     public float DashSpeed = 0;
-    public float HorizontalVelocity;
+    public float HorizontalVelocity, ModifiedHorizontalVelocity;
     public bool IsGrounded;
     public bool IsDashing = false;
     public bool IsRunning = false;
 
-    public List<MechanicBase> mechanics = new List<MechanicBase>();
-    public Transform SpriteTransform, GroundedCheckTopLeft, GroundedCheckBottomRight;
+    List<MechanicBase> mechanics;
+    public Transform SpriteTransform, BodyTransform, GroundedCheckTopLeft, GroundedCheckBottomRight;
     public LayerMask GroundLayer;
     public float RotationSpeed;
     public float GroundCheckRayLength;
 
     Rigidbody2D playerRigidBody;
     BoxCollider2D playerBoxCollider;
-
+    PlayerAnimationHandler playerAnimationHandler;
     int facing = 1;
+    bool canDash = true;
 
     public Quaternion RotationDestination = Quaternion.identity;
 
+    int GetJumpNumber {
+        get {
+            return MaxJumps - JumpsRemaining;
+        }
+    }
+
+    public List<MechanicBase> GetMechanics(bool activeOnly = false)
+    {
+        if(mechanics == null)
+        {
+            mechanics = new List<MechanicBase>(GetComponents<MechanicBase>());
+        }
+
+        if (activeOnly)
+        {
+            List<MechanicBase> activeMechanics = new List<MechanicBase>();
+            foreach (MechanicBase mechanic in mechanics)
+            {
+                if (mechanic.MechanicIsActive)
+                {
+                    activeMechanics.Add(mechanic);
+                }
+            }
+            return activeMechanics;
+        }
+        else
+        {
+            return mechanics;
+        }
+    }
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // TODO: Don't have all mechanics at start? or something
         mechanics = new List<MechanicBase>(GetComponents<MechanicBase>());
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerBoxCollider = GetComponent<BoxCollider2D>();
+        playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
     }
 
     // Update is called once per frame
@@ -49,12 +82,9 @@ public class Player : MonoBehaviour
         {
             HorizontalVelocity = 0;
         }
-        foreach (MechanicBase mechanic in mechanics)
+        foreach (MechanicBase mechanic in GetMechanics(true))
         {
-            if (mechanic.MechanicIsActive)
-            {
-                mechanic.ApplyMechanic(this);
-            }
+            mechanic.ApplyMechanic(this);
         }
     }
 
@@ -83,7 +113,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                if (Input.GetButton("Jump") && Mathf.Abs(playerRigidBody.velocity.y) < PlayerFloatSpeed)
+                if (GameInputManager.GetKey("Jump") && Mathf.Abs(playerRigidBody.velocity.y) < PlayerFloatSpeed)
                 {
                     // Float at the top to give the player more time to land the jump
                     PlayerGravity = 2;
@@ -113,21 +143,21 @@ public class Player : MonoBehaviour
         {
             playerRigidBody.sharedMaterial.friction = 9999;
         }
-        float modifiedHorizontalVelocity = HorizontalVelocity;
+        ModifiedHorizontalVelocity = HorizontalVelocity;
 
         if (IsDashing)
         {
             playerRigidBody.sharedMaterial.friction = 0f;
-            modifiedHorizontalVelocity = facing * DashSpeed;
+            ModifiedHorizontalVelocity = facing * DashSpeed;
         }
         else if (IsRunning)
         {
-            modifiedHorizontalVelocity *= RunSpeedModifier;
+            ModifiedHorizontalVelocity *= RunSpeedModifier;
         }
 
-        SpriteTransform.localScale = new Vector3(facing, SpriteTransform.localScale.y, SpriteTransform.localScale.z);
+        BodyTransform.localScale = new Vector3(facing, BodyTransform.localScale.y, BodyTransform.localScale.z);
 
-        playerRigidBody.velocity = new Vector2(modifiedHorizontalVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
+        playerRigidBody.velocity = new Vector2(ModifiedHorizontalVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
 
         // Hacky shit to have a correct friction on the physics 2D material (HAS BEEN A BUG FOR 5 YEARS FUCK YOU UNITY)
         playerBoxCollider.enabled = false;
@@ -136,7 +166,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.contacts[0].normal.y > 0)
+        if (collision.contacts[0].normal.y > 0.2)
         {
             SpriteTransform.rotation = Quaternion.FromToRotation(transform.up, collision.contacts[0].normal);
         }
@@ -151,13 +181,51 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "goal")
+        {
+            //go next scene
+            SceneManager.LoadScene("Level2");
+        }
+    }
+
     public void Jump(float jumpForce)
     {
         if (JumpsRemaining > 0)
         {
+            // TODO The Jumpnumber counter for audio doesn't work if it triggers twice, this happens when DoubleJumpMechanic is active
+            PlayJumpSound();
+            string animationName = "DoubleJump";
+            if(JumpsRemaining == MaxJumps)
+            {
+                animationName = "Jump";
+            }
+            playerAnimationHandler.TriggerAnimation(animationName);
             RotationDestination = Quaternion.identity;
             JumpsRemaining--;
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
         }
+    }
+
+    public void Dash(string animationName, float dashTime, float dashCooldownTime)
+    {
+        if (canDash)
+        {
+            IsDashing = true;
+            canDash = false;
+            StartCoroutine(CoroutineHelper.DelaySeconds(() => IsDashing = false, dashTime));
+            StartCoroutine(CoroutineHelper.DelaySeconds(() => canDash = true, dashCooldownTime));
+            playerAnimationHandler.TriggerAnimation(animationName);
+        }
+    }
+
+    void PlayJumpSound()
+    {
+        int jumpNumber = GetJumpNumber;
+        FMOD.Studio.EventInstance jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Jump");
+        jumpSound.setParameterByName("JumpNumber", jumpNumber, false);
+        jumpSound.start();
+        jumpSound.release();
     }
 }
