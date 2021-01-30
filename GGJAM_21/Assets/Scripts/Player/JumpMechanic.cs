@@ -26,6 +26,7 @@ public class JumpMechanic : MechanicBase
             if (player.JumpsRemaining > 0)
             {
                 player.Jump(JumpForce);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Jump");
             }
             else
             {
