@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
 
         if (HorizontalVelocity != 0)
         {
-            playerRigidBody.sharedMaterial.friction = 0.4f;
+            playerRigidBody.sharedMaterial.friction = 0f;
             facing = (int)Mathf.Sign(HorizontalVelocity);
         }
         else
@@ -157,8 +157,11 @@ public class Player : MonoBehaviour
 
         BodyTransform.localScale = new Vector3(facing, BodyTransform.localScale.y, BodyTransform.localScale.z);
 
+        Debug.Log("modihorivelo " + ModifiedHorizontalVelocity);
+
         playerRigidBody.velocity = new Vector2(ModifiedHorizontalVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
 
+        Debug.Log("playribovelo " + playerRigidBody.velocity);
         // Hacky shit to have a correct friction on the physics 2D material (HAS BEEN A BUG FOR 5 YEARS FUCK YOU UNITY)
         playerBoxCollider.enabled = false;
         playerBoxCollider.enabled = true;
@@ -194,8 +197,6 @@ public class Player : MonoBehaviour
     {
         if (JumpsRemaining > 0)
         {
-            // TODO The Jumpnumber counter for audio doesn't work if it triggers twice, this happens when DoubleJumpMechanic is active
-            PlayJumpSound();
             string animationName = "DoubleJump";
             if(JumpsRemaining == MaxJumps)
             {
@@ -218,14 +219,5 @@ public class Player : MonoBehaviour
             StartCoroutine(CoroutineHelper.DelaySeconds(() => canDash = true, dashCooldownTime));
             playerAnimationHandler.TriggerAnimation(animationName);
         }
-    }
-
-    void PlayJumpSound()
-    {
-        int jumpNumber = GetJumpNumber;
-        FMOD.Studio.EventInstance jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Jump");
-        jumpSound.setParameterByName("JumpNumber", jumpNumber, false);
-        jumpSound.start();
-        jumpSound.release();
     }
 }

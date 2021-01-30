@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{cb9594c0-3745-4ad8-a98f-76de46198ae3}">
+		<property name="name">
+			<value>Bleeps</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e350b926-09f8-4336-8778-23dea5e416d7}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c6940724-a4b0-4071-ae40-395a1d932ab2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c6940724-a4b0-4071-ae40-395a1d932ab2}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.65999996662139893</value>
+		</property>
+	</object>
+</objects>

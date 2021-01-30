@@ -5,8 +5,18 @@ public class Audio_Player_Sounds : MonoBehaviour
 
     void PlayFootstepSound ()
     {
-        FMOD.Studio.EventInstance Footstep = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Footstep");
-        Footstep.start();
-        Footstep.release();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footstep");
+    }
+
+    void PlayFirstJumpSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Jump");
+
+    }
+
+    void PlaySecondJumpSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/SecondJump");
+
     }
 }
