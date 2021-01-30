@@ -15,7 +15,8 @@ public class MoveRightMechanic : MechanicBase
     {
         if (GameInputManager.GetKey(MechanicButton))
         {
-            player.horizontalVelocity += 1 * MoveSpeed;
+            if(!player.IsDashing)
+                player.HorizontalVelocity += 1 * MoveSpeed;
         }
     }
 

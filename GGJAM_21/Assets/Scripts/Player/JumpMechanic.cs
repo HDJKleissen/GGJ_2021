@@ -26,6 +26,7 @@ public class JumpMechanic : MechanicBase
             if (player.JumpsRemaining > 0)
             {
                 player.Jump(JumpForce);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Jump");
             }
             else
             {
@@ -36,7 +37,7 @@ public class JumpMechanic : MechanicBase
                     }, player.JumpBufferTime));
 
                 StartCoroutine(CoroutineHelper.Chain(
-                    CoroutineHelper.WaitUntil(() => player.isGrounded),
+                    CoroutineHelper.WaitUntil(() => player.IsGrounded),
                     CoroutineHelper.Do(() => {
                         if (withinJumpBuffer)
                         {

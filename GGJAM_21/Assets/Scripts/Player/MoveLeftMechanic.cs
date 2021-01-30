@@ -13,10 +13,12 @@ public class MoveLeftMechanic : MechanicBase
 
     public override void ApplyMechanic(Player player)
     {
-        // TODO: Bindable keys
         if (GameInputManager.GetKey(MechanicButton))
         {
-            player.horizontalVelocity += -1 * MoveSpeed;
+            if (!player.IsDashing)
+            {
+                player.HorizontalVelocity += -1 * MoveSpeed;
+            }
         }
     }
 }
