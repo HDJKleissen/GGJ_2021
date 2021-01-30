@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     public bool IsGrounded;
     public bool IsDashing = false;
     public bool IsRunning = false;
-    
+
     public List<MechanicBase> mechanics = new List<MechanicBase>();
     public Transform SpriteTransform, GroundedCheckTopLeft, GroundedCheckBottomRight;
     public LayerMask GroundLayer;
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         // TODO: Don't have all mechanics at start? or something
         mechanics = new List<MechanicBase>(GetComponents<MechanicBase>());
         playerRigidBody = GetComponent<Rigidbody2D>();
-        playerBoxCollider = GetComponent<BoxCollider2D>(); 
+        playerBoxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
             }
         }
         // We're on the ground, so reset jump amount
-        else
+        else if(!previousIsGrounded)
         {
             if (JumpsRemaining != MaxJumps)
             {
@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         }
 
         SpriteTransform.localScale = new Vector3(facing, SpriteTransform.localScale.y, SpriteTransform.localScale.z);
-        
+
         playerRigidBody.velocity = new Vector2(modifiedHorizontalVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
 
         // Hacky shit to have a correct friction on the physics 2D material (HAS BEEN A BUG FOR 5 YEARS FUCK YOU UNITY)
