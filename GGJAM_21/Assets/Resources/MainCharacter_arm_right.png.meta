@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 47a6c061c49d76d48b9d26948c68ff01
+guid: 4ae9dceb67097f94fa1323106e3116c0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -6943002972954537454
+    second: MainCharacter_arm_right_0
+  - first:
+      213: -8264602107431768304
+    second: MainCharacter_arm_right_1
+  - first:
+      213: 8281329837157783207
+    second: MainCharacter_arm_right_2
+  - first:
+      213: 3033910064226609396
+    second: MainCharacter_arm_right_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +53,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -125,11 +137,95 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MainCharacter_arm_right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409.5
+        width: 409.5
+        height: 409.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212509ae49f75af90800000000000000
+      internalID: -6943002972954537454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainCharacter_arm_right_1
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 409.5
+        width: 409.5
+        height: 409.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01fa598cb2c3e4d80800000000000000
+      internalID: -8264602107431768304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainCharacter_arm_right_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.5
+        width: 409.5
+        height: 409.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a612ab4c913de270800000000000000
+      internalID: 8281329837157783207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainCharacter_arm_right_3
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 0.5
+        width: 409.5
+        height: 409.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f8a5ba012d9a1a20800000000000000
+      internalID: 3033910064226609396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7c1d20b4cf186b74eb162b1cdbd7d129
     internalID: 0
     vertices: []
     indices: 
