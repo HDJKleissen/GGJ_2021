@@ -11,8 +11,8 @@ public static class GameInputManager
         "MoveLeft",
         "MoveRight",
         "Jump",
-        "Backward",
-        "Left",
+        "Dash",
+        "BackDash",
         "Right"
     };
     public static KeyCode[] defaults = new KeyCode[6]
