@@ -21,14 +21,11 @@ public class Player : MonoBehaviour
     public bool IsRunning = false;
     
     public List<MechanicBase> mechanics = new List<MechanicBase>();
-    public Transform SpriteTransform, GroundRotationCheck, GroundRotationCheckL, GroundRotationCheckR, GroundedCheckTopLeft, GroundedCheckBottomRight;
+    public Transform SpriteTransform, GroundedCheckTopLeft, GroundedCheckBottomRight;
     public LayerMask GroundLayer;
     public float RotationSpeed;
     public float GroundCheckRayLength;
 
-    // Temporary for showing facing, until sprite
-    public Transform Nose;
-    public float NoseXPosLeft, NoseXPosRight;
     Rigidbody2D playerRigidBody;
     BoxCollider2D playerBoxCollider;
 
@@ -59,19 +56,6 @@ public class Player : MonoBehaviour
                 mechanic.ApplyMechanic(this);
             }
         }
-
-        if(facing < 0)
-        {
-            Nose.localPosition = new Vector3(NoseXPosLeft, Nose.localPosition.y, Nose.localPosition.z);
-        }
-        else if (facing > 0)
-        {
-            Nose.localPosition = new Vector3(NoseXPosRight, Nose.localPosition.y, Nose.localPosition.z);
-        }
-        else
-        {
-            Debug.Log("wtf facing shouldn't be 0");
-        }
     }
 
     void FixedUpdate()
@@ -82,6 +66,7 @@ public class Player : MonoBehaviour
 
         if (!IsGrounded)
         {
+            SpriteTransform.localPosition = Vector3.zero;
             SpriteTransform.rotation = Quaternion.identity;
             if (IsGrounded != previousIsGrounded)
             {
@@ -132,13 +117,14 @@ public class Player : MonoBehaviour
 
         if (IsDashing)
         {
-            int direction = facing;
-            modifiedHorizontalVelocity = direction * DashSpeed;
+            modifiedHorizontalVelocity = facing * DashSpeed;
         }
         else if (IsRunning)
         {
             modifiedHorizontalVelocity *= RunSpeedModifier;
         }
+
+        SpriteTransform.localScale = new Vector3(facing, SpriteTransform.localScale.y, SpriteTransform.localScale.z);
         
         playerRigidBody.velocity = new Vector2(modifiedHorizontalVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
 
@@ -150,6 +136,14 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         SpriteTransform.rotation = Quaternion.FromToRotation(transform.up, collision.contacts[0].normal);
+        if (SpriteTransform.rotation != Quaternion.identity)
+        {
+            SpriteTransform.localPosition = new Vector3(0, -0.3f, 0);
+        }
+        else
+        {
+            SpriteTransform.localPosition = Vector3.zero;
+        }
     }
 
     public void Jump(float jumpForce)
