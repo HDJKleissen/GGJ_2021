@@ -117,6 +117,7 @@ public class Player : MonoBehaviour
 
         if (IsDashing)
         {
+            playerRigidBody.sharedMaterial.friction = 0f;
             modifiedHorizontalVelocity = facing * DashSpeed;
         }
         else if (IsRunning)

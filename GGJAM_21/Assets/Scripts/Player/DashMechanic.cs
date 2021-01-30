@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Fix going up slopes with dash
 public class DashMechanic : MechanicBase
 {
     public override string MechanicButton => "Dash";
