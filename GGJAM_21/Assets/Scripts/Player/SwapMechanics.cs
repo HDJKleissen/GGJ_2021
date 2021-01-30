@@ -6,6 +6,9 @@ public class SwapMechanics : MonoBehaviour
 {
     Player player;
 
+    int nextPickUpId = 0;
+    public int maxMechanics = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,30 @@ public class SwapMechanics : MonoBehaviour
         }
     }
 
+    //get form the active mechanics the oldest one that is active
+    MechanicBase GetOldestMechanic()
+    {
+        int smallestId = 0;
+        MechanicBase mb = player.mechanics[0];
+        foreach(MechanicBase m in player.mechanics)
+        {
+            //skip inactive mechanics
+            if (!m.MechanicIsActive)
+            {
+                Debug.Log("Skipping: " + m);
+                continue;
+            }
+
+            if(m.pickupOrderId <= smallestId)
+            {
+                smallestId = m.pickupOrderId;
+                mb = m;
+            }
+        }
+
+        return mb;
+    }
+
     private IEnumerator OnPickUp(string newMechanic)
     {
         bool input = false;
@@ -36,6 +63,17 @@ public class SwapMechanics : MonoBehaviour
         //right now shouldnt need to be inside a coroutine
         while (true)
         {
+            //set the new mechanic active
+            foreach(MechanicBase m in player.mechanics)
+            {
+                if(m.MechanicButton == newMechanic)
+                {
+                    m.MechanicIsActive = true;
+                    nextPickUpId++;
+                    m.pickupOrderId = nextPickUpId;
+                }
+            }
+
             //randomonly swap 1 mechanic for now
             int totalMechanicsActive = 0;
             foreach (MechanicBase m in player.mechanics)
@@ -43,19 +81,14 @@ public class SwapMechanics : MonoBehaviour
                 if (m.MechanicIsActive)
                     totalMechanicsActive++;
             }
-            if(totalMechanicsActive >= 3)
+
+            if(totalMechanicsActive > maxMechanics)
             {
-                player.mechanics[Random.Range(0, player.mechanics.Count - 1)].MechanicIsActive = false;
+                //random
+                //player.mechanics[Random.Range(0, player.mechanics.Count - 1)].MechanicIsActive = false;
+                GetOldestMechanic().MechanicIsActive = false;
             }
 
-            //set the new mechanic active
-            foreach(MechanicBase m in player.mechanics)
-            {
-                if(m.MechanicButton == newMechanic)
-                {
-                    m.MechanicIsActive = true;
-                }
-            }
 
             input = true;
 
