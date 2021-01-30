@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 545033812}
   - component: {fileID: 545033815}
   - component: {fileID: 545033814}
+  - component: {fileID: 474216257018056619}
   m_Layer: 0
   m_Name: DashBooster_Backwards
   m_TagString: Untagged
@@ -247,6 +248,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &474216257018056619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545033811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332e85a889074765b501def6eb212aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &791289577
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +416,7 @@ GameObject:
   - component: {fileID: 1169073788}
   - component: {fileID: 1169073790}
   - component: {fileID: 1169073789}
+  - component: {fileID: 1093432487030153006}
   m_Layer: 0
   m_Name: DashBooster_Forward
   m_TagString: Untagged
@@ -494,6 +508,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1093432487030153006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169073787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332e85a889074765b501def6eb212aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1500300523
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,6 +980,7 @@ GameObject:
   - component: {fileID: 2009791002}
   - component: {fileID: 2009791004}
   - component: {fileID: 2009791003}
+  - component: {fileID: 599391443084005210}
   m_Layer: 0
   m_Name: Leg_R_Fast
   m_TagString: Untagged
@@ -1045,6 +1072,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &599391443084005210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009791001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6332e85a889074765b501def6eb212aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2051019296
 GameObject:
   m_ObjectHideFlags: 0
