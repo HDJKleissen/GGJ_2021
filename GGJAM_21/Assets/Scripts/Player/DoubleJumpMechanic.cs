@@ -1,14 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class DoubleJumpMechanic : JumpMechanic
+public class DoubleJumpMechanic : JumpMechanicAbstract
 {
-    public override void SetupMechanic(Player player)
-    {
-        if(player.MaxJumps < 2)
-        {
-            player.MaxJumps = 2;
-        }
-    }
+    public override string MechanicButton => "DoubleJump";
+
+    public override int JumpAmount => 2;
 }

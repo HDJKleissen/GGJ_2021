@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwapMechanics : MonoBehaviour
 {
     Player player;
+    PlayerAnimationHandler playerAnimationHandler;
 
     int nextPickUpId = 0;
     public int maxMechanics = 3;
@@ -12,7 +13,8 @@ public class SwapMechanics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = gameObject.GetComponent<Player>();
+        player = GetComponent<Player>();
+        playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
     }
 
     // Update is called once per frame
@@ -20,11 +22,10 @@ public class SwapMechanics : MonoBehaviour
     {
         
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("Collision found with anything");
-        if(collision.gameObject.tag == "mechanic")
+        if (collision.gameObject.tag == "mechanic")
         {
             StartCoroutine(OnPickUp(collision.gameObject.GetComponent<MechanicInstance>().mechanicName));
             Destroy(collision.gameObject);
@@ -35,8 +36,8 @@ public class SwapMechanics : MonoBehaviour
     MechanicBase GetOldestMechanic()
     {
         int smallestId = 0;
-        MechanicBase mb = player.mechanics[0];
-        foreach(MechanicBase m in player.mechanics)
+        MechanicBase mb = player.GetMechanics()[0];
+        foreach(MechanicBase m in player.GetMechanics())
         {
             //skip inactive mechanics
             if (!m.MechanicIsActive)
@@ -59,12 +60,13 @@ public class SwapMechanics : MonoBehaviour
     {
         bool input = false;
 
-        //should perhaps start a lil  animation or someshit so its clear ur swapping mechanics
+        //should perhaps start a lil animation or someshit so its clear ur swapping mechanics
         //right now shouldnt need to be inside a coroutine
         while (true)
         {
+            List<MechanicBase> playerMechanicList = player.GetMechanics();
             //set the new mechanic active
-            foreach(MechanicBase m in player.mechanics)
+            foreach(MechanicBase m in playerMechanicList)
             {
                 if(m.MechanicButton == newMechanic)
                 {
@@ -76,12 +78,11 @@ public class SwapMechanics : MonoBehaviour
 
             //randomonly swap 1 mechanic for now
             int totalMechanicsActive = 0;
-            foreach (MechanicBase m in player.mechanics)
+            foreach (MechanicBase m in playerMechanicList)
             {
                 if (m.MechanicIsActive)
                     totalMechanicsActive++;
             }
-
             if(totalMechanicsActive > maxMechanics)
             {
                 //random
@@ -97,5 +98,6 @@ public class SwapMechanics : MonoBehaviour
             
             yield return null;
         }
+        playerAnimationHandler.CheckActivatedMechanics();
     }
 }
