@@ -27,6 +27,7 @@ public class JumpMechanic : MechanicBase
             if (player.JumpsRemaining > 0)
             {
                 player.Jump(JumpForce);
+                // TODO The Jumpnumber counter for audio doesn't work if it triggers twice, this happens when DoubleJumpMechanic is active
                 PlayJumpSound(player);
             }
             else
@@ -63,5 +64,6 @@ public class JumpMechanic : MechanicBase
     public void SetJumpNumber(Player player)
     {
         JumpNumber = player.MaxJumps - player.JumpsRemaining;
+        //Debug.Log(JumpNumber);
     }
 }
