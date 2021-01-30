@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476155491572160
+  lastModified: 637476159454112330
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -61,7 +61,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -8195184833372936179}
+  - {fileID: 4869574356105714641}
   MinDistance: 0
   MaxDistance: 0
   Length: 687
@@ -80,7 +80,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476155491572160
+  lastModified: 637476216976261682
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -124,7 +124,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
   Name: SFX_Bank
   StudioPath: bank:/SFX_Bank
-  lastModified: 637476155491751686
+  lastModified: 637476159454271896
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
   Name: SFX_Bank
   StudioPath: bank:/SFX_Bank
-  lastModified: 637476155491751686
+  lastModified: 637476216976451169
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -216,8 +216,48 @@ MonoBehaviour:
   - {fileID: 8443850305616478101}
   StringsBanks:
   - {fileID: -6076671678044556201}
-  stringsBankWriteTime: 637476155491572160
+  stringsBankWriteTime: 637476216976261682
   cacheVersion: 6
+--- !u!114 &537643627168119726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &1287760186101281254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1501288953531406530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,10 +278,53 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -2729710082975702725}
+  - {fileID: 2600079191457426716}
   MinDistance: 0
   MaxDistance: 0
   Length: 687
+--- !u!114 &2600079191457426716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &2753184853178340675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Footstep
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Footstep
+  guid: 1f3d29acd727b04ab5b36ab7f573a78c
+  Banks:
+  - {fileID: -4410623031184861428}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 375
 --- !u!114 &3501655847083705340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +348,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 375
+--- !u!114 &4869574356105714641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &5581456415882879723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +383,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Music_Bank.bank
   Name: Music_Bank
   StudioPath: bank:/Music_Bank
-  lastModified: 637476121050454873
+  lastModified: 637476125528982834
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -299,7 +402,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476121050454873
+  lastModified: 637476125528982834
   LoadResult: 0
   FileSizes: []
   Exists: 1

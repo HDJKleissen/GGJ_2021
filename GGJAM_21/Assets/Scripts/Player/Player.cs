@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -177,6 +178,12 @@ public class Player : MonoBehaviour
         else
         {
             SpriteTransform.localPosition = Vector3.zero;
+        }
+        
+        if(collision.gameObject.tag == "goal")
+        {
+            //go next scene
+            SceneManager.LoadScene("Level2");
         }
     }
 
