@@ -9,7 +9,6 @@ public class JumpMechanic : MechanicBase
     public float JumpForce;
     bool withinJumpBuffer = false;
     int JumpNumber;
-    Player player;
 
     public override void SetupMechanic(Player player)
     {
@@ -28,7 +27,7 @@ public class JumpMechanic : MechanicBase
             if (player.JumpsRemaining > 0)
             {
                 player.Jump(JumpForce);
-                PlayJumpSound();
+                PlayJumpSound(player);
             }
             else
             {
@@ -52,7 +51,7 @@ public class JumpMechanic : MechanicBase
         }
     }
 
-    void PlayJumpSound()
+    void PlayJumpSound(Player player)
     {
         SetJumpNumber(player);
         FMOD.Studio.EventInstance jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Jump");
@@ -61,7 +60,7 @@ public class JumpMechanic : MechanicBase
         jumpSound.release();
     }
 
-    void SetJumpNumber(Player player)
+    public void SetJumpNumber(Player player)
     {
         JumpNumber = player.MaxJumps - player.JumpsRemaining;
     }

@@ -59,7 +59,11 @@
 			<destination>{e68d25c9-1580-4fc4-90c0-c55fee546b5b}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{6e50ead0-cf51-4214-919b-9285b85f1ec8}" />
+	<object class="EventAutomatableProperties" id="{6e50ead0-cf51-4214-919b-9285b85f1ec8}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{d7965822-26a7-476b-948e-025287e80af8}" />
 	<object class="GroupTrack" id="{7cab1636-dbcd-4fe4-87e5-cd6d9dee6783}">
 		<relationship name="automationTracks">
@@ -197,7 +201,6 @@
 		</relationship>
 		<relationship name="automationPoints">
 			<destination>{3b9b11d2-2c18-4dd2-af41-5e9850dce4b1}</destination>
-			<destination>{787731d0-4d51-4b1e-91dd-4eb28bd8d7e2}</destination>
 			<destination>{52c2dfdd-85cf-4c49-a5d0-8522a618ae95}</destination>
 			<destination>{558dec07-4f11-4198-b324-f3b57b6acf9a}</destination>
 			<destination>{ddd00eed-5c4d-4b02-90a9-a05ab1953d58}</destination>
@@ -206,6 +209,7 @@
 			<destination>{1343fb71-ba33-4e93-a5f7-28d11b8ddb97}</destination>
 			<destination>{37a0e5f8-2d63-4406-9b0e-f6991227846a}</destination>
 			<destination>{0601922d-e2e8-4264-85bf-1f4ab9962f6c}</destination>
+			<destination>{c642464a-68f9-4d3e-ae4a-b0abb1bebcdd}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{a93abd3b-1422-4148-9541-6e27d4a15c61}" />
@@ -215,14 +219,6 @@
 		</property>
 		<property name="value">
 			<value>0</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{787731d0-4d51-4b1e-91dd-4eb28bd8d7e2}">
-		<property name="position">
-			<value>2</value>
-		</property>
-		<property name="value">
-			<value>1</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{52c2dfdd-85cf-4c49-a5d0-8522a618ae95}">
@@ -287,6 +283,14 @@
 		</property>
 		<property name="value">
 			<value>6</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{c642464a-68f9-4d3e-ae4a-b0abb1bebcdd}">
+		<property name="position">
+			<value>2</value>
+		</property>
+		<property name="value">
+			<value>1</value>
 		</property>
 	</object>
 </objects>
