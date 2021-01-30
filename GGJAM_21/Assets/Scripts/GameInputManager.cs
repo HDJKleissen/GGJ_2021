@@ -5,7 +5,7 @@ using System;
 
 public static class GameInputManager
 {
-    static Dictionary<string, KeyCode> keyMapping;
+    public static Dictionary<string, KeyCode> keyMapping;
     public static string[] keyMaps = new string[6]
     {
         "MoveLeft",

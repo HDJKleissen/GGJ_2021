@@ -53,6 +53,7 @@ public class SwapMechanics : MonoBehaviour
                 {
                     Debug.Log("NEW INPUT KEY SELECTED " + keyMap);
                     SwapMechanicSlot(newMechanic, keyMap);
+                    GameInputManager.SetKeyMap(newMechanic.MechanicButton, GameInputManager.keyMapping[keyMap]);
 
                     input = true;
                 }
