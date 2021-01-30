@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
 
         if (HorizontalVelocity != 0)
         {
-            playerRigidBody.sharedMaterial.friction = 0.4f;
+            playerRigidBody.sharedMaterial.friction = 0f;
             facing = (int)Mathf.Sign(HorizontalVelocity);
         }
         else
@@ -157,8 +157,11 @@ public class Player : MonoBehaviour
 
         BodyTransform.localScale = new Vector3(facing, BodyTransform.localScale.y, BodyTransform.localScale.z);
 
+        Debug.Log("modihorivelo " + ModifiedHorizontalVelocity);
+
         playerRigidBody.velocity = new Vector2(ModifiedHorizontalVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
 
+        Debug.Log("playribovelo " + playerRigidBody.velocity);
         // Hacky shit to have a correct friction on the physics 2D material (HAS BEEN A BUG FOR 5 YEARS FUCK YOU UNITY)
         playerBoxCollider.enabled = false;
         playerBoxCollider.enabled = true;
