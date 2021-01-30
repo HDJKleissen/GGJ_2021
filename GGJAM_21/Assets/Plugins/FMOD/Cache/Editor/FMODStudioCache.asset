@@ -81,7 +81,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 4741291645677980651}
+  - {fileID: -1528860633997039790}
   MinDistance: 0
   MaxDistance: 0
   Length: 687
@@ -100,9 +100,11 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476332600000000
+  lastModified: 637476334689927692
   LoadResult: 0
-  FileSizes: []
+  FileSizes:
+  - Name: Desktop
+    Value: 1032
   Exists: 1
 --- !u!114 &-4465434032159469017
 MonoBehaviour:
@@ -161,7 +163,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
   Name: SFX_Bank
   StudioPath: bank:/SFX_Bank
-  lastModified: 637476332600000000
+  lastModified: 637476334690087255
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -208,6 +210,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-1528860633997039790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +257,7 @@ MonoBehaviour:
   - {fileID: 8443850305616478101}
   StringsBanks:
   - {fileID: -6076671678044556201}
-  stringsBankWriteTime: 637476332600000000
+  stringsBankWriteTime: 637476334689927692
   cacheVersion: 6
 --- !u!114 &537643627168119726
 MonoBehaviour:
@@ -465,7 +487,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Music_Bank.bank
   Name: Music_Bank
   StudioPath: bank:/Music_Bank
-  lastModified: 637476329320000000
+  lastModified: 637475644869976503
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -484,7 +506,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476329320000000
+  lastModified: 637475644869966516
   LoadResult: 0
   FileSizes: []
   Exists: 1
