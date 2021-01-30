@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RunMechanic : MechanicBase
 {
+    public override string MechanicButton => "Run";
+
     public float RunSpeedModifier;
 
     public override void SetupMechanic(Player player)

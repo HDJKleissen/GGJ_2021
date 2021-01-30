@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MoveRightMechanic : MechanicBase
 {
+    public override string MechanicButton => "Horizontal";
+
     public float MoveSpeed;
 
     public override void SetupMechanic(Player player)

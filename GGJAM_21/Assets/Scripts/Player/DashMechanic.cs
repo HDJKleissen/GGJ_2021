@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DashMechanic : MechanicBase
 {
+    public override string MechanicButton => "Dash";
+
     public float DashSpeed;
     public float DashTime;
     public float DashCooldownTime;
@@ -12,17 +14,22 @@ public class DashMechanic : MechanicBase
 
     public override void SetupMechanic(Player player)
     {
-        player.DashSpeed = DashSpeed;
     }
 
     public override void ApplyMechanic(Player player)
     {
-        if (Input.GetButtonDown("Dash") && canDash)
+        if (Input.GetButtonDown(MechanicButton) && canDash)
         {
-            player.IsDashing = true;
-            canDash = false;
-            StartCoroutine(CoroutineHelper.DelaySeconds(() => player.IsDashing = false, DashTime));
-            StartCoroutine(CoroutineHelper.DelaySeconds(() => canDash = true, DashCooldownTime));
+            player.DashSpeed = DashSpeed;
+            Dash(player);
         }
+    }
+
+    void Dash(Player player)
+    {
+        player.IsDashing = true;
+        canDash = false;
+        StartCoroutine(CoroutineHelper.DelaySeconds(() => player.IsDashing = false, DashTime));
+        StartCoroutine(CoroutineHelper.DelaySeconds(() => canDash = true, DashCooldownTime));
     }
 }
