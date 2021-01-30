@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{99ceb6cd-d044-440e-975a-22cd419101e8}">
+		<property name="name">
+			<value>GlitchHat</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e350b926-09f8-4336-8778-23dea5e416d7}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{81bf2828-ec8d-48e0-849c-0ae950a88d57}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{81bf2828-ec8d-48e0-849c-0ae950a88d57}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.65999996662139893</value>
+		</property>
+	</object>
+</objects>
