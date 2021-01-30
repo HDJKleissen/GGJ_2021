@@ -23,7 +23,6 @@ public class SwapMechanics : MonoBehaviour
         //Debug.Log("Collision found with anything");
         if(collision.gameObject.tag == "mechanic")
         {
-            Debug.Log("Exit on Collision with Player");
             StartCoroutine(OnPickUp(collision.gameObject.GetComponent<MechanicInstance>().mechanicName));
             Destroy(collision.gameObject);
         }
@@ -32,21 +31,11 @@ public class SwapMechanics : MonoBehaviour
     private IEnumerator OnPickUp(string newMechanic)
     {
         bool input = false;
-        Debug.Log(newMechanic.GetType());
+
         //should perhaps start a lil  animation or someshit so its clear ur swapping mechanics
+        //right now shouldnt need to be inside a coroutine
         while (true)
         {
-            //look for all possible keyinputs
-            //foreach (string keyMap in GameInputManager.keyMaps)
-            //{
-            //    if (GameInputManager.GetKeyDown(keyMap))
-            //    {
-            //        Debug.Log("NEW INPUT KEY SELECTED " + keyMap);
-            //        SwapMechanicSlot(newMechanic, keyMap);
-            //        input = true;
-            //    }
-            //}
-
             //randomonly swap 1 mechanic for now
             int totalMechanicsActive = 0;
             foreach (MechanicBase m in player.mechanics)
@@ -67,6 +56,7 @@ public class SwapMechanics : MonoBehaviour
                     m.MechanicIsActive = true;
                 }
             }
+
             input = true;
 
             if (input)
