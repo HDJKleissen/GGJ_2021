@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // TODO: Fix going up slopes with dash
@@ -10,27 +8,17 @@ public class DashMechanic : MechanicBase
     public float DashSpeed;
     public float DashTime;
     public float DashCooldownTime;
-
-    bool canDash = true;
-
+    
     public override void SetupMechanic(Player player)
     {
     }
 
     public override void ApplyMechanic(Player player)
     {
-        if (Input.GetButtonDown(MechanicButton) && canDash)
+        if (Input.GetButtonDown(MechanicButton))
         {
             player.DashSpeed = DashSpeed;
-            Dash(player);
+            player.Dash(MechanicButton, DashTime, DashCooldownTime);
         }
-    }
-
-    void Dash(Player player)
-    {
-        player.IsDashing = true;
-        canDash = false;
-        StartCoroutine(CoroutineHelper.DelaySeconds(() => player.IsDashing = false, DashTime));
-        StartCoroutine(CoroutineHelper.DelaySeconds(() => canDash = true, DashCooldownTime));
     }
 }

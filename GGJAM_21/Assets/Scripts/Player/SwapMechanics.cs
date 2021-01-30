@@ -5,11 +5,13 @@ using UnityEngine;
 public class SwapMechanics : MonoBehaviour
 {
     Player player;
+    PlayerAnimationHandler playerAnimationHandler;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = gameObject.GetComponent<Player>();
+        player = GetComponent<Player>();
+        playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
     }
 
     // Update is called once per frame
@@ -32,24 +34,25 @@ public class SwapMechanics : MonoBehaviour
     {
         bool input = false;
 
-        //should perhaps start a lil  animation or someshit so its clear ur swapping mechanics
+        //should perhaps start a lil animation or someshit so its clear ur swapping mechanics
         //right now shouldnt need to be inside a coroutine
         while (true)
         {
+            List<MechanicBase> playerMechanicList = player.GetMechanics();
             //randomonly swap 1 mechanic for now
             int totalMechanicsActive = 0;
-            foreach (MechanicBase m in player.mechanics)
+            foreach (MechanicBase m in playerMechanicList)
             {
                 if (m.MechanicIsActive)
                     totalMechanicsActive++;
             }
             if(totalMechanicsActive >= 3)
             {
-                player.mechanics[Random.Range(0, player.mechanics.Count - 1)].MechanicIsActive = false;
+                playerMechanicList[Random.Range(0, playerMechanicList.Count - 1)].MechanicIsActive = false;
             }
 
             //set the new mechanic active
-            foreach(MechanicBase m in player.mechanics)
+            foreach(MechanicBase m in playerMechanicList)
             {
                 if(m.MechanicButton == newMechanic)
                 {
@@ -64,5 +67,6 @@ public class SwapMechanics : MonoBehaviour
             
             yield return null;
         }
+        playerAnimationHandler.CheckActivatedMechanics();
     }
 }
