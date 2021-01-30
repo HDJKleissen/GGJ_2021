@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{b2a3bdc8-d95f-4466-bfef-1e5a9a9e624b}">
+		<property name="name">
+			<value>Beat</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e350b926-09f8-4336-8778-23dea5e416d7}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{d925508f-c0e2-4022-9792-d458c91c1e24}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{d925508f-c0e2-4022-9792-d458c91c1e24}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.95999997854232788</value>
+		</property>
+	</object>
+</objects>
