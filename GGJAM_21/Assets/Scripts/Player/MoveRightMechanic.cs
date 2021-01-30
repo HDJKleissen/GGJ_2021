@@ -14,9 +14,9 @@ public class MoveRightMechanic : MechanicBase
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         // TODO: Bindable keys
-        if (horizontalInput > 0)
+        if (horizontalInput > 0 && !player.IsDashing)
         {
-            player.horizontalVelocity += horizontalInput * MoveSpeed;
+            player.HorizontalVelocity += horizontalInput * MoveSpeed;
         }
     }
 
