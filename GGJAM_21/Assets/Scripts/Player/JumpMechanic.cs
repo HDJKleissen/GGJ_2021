@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class JumpMechanic : MechanicBase
 {
+    public override string MechanicButton => "Jump";
+
     public float JumpForce;
     bool withinJumpBuffer = false;
 
@@ -18,7 +20,7 @@ public class JumpMechanic : MechanicBase
     public override void ApplyMechanic(Player player)
     {
         // TODO: Bindable keys
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown(MechanicButton))
         {
             // We have a jump remaining, jump immediately
             if (player.JumpsRemaining > 0)
@@ -35,7 +37,7 @@ public class JumpMechanic : MechanicBase
                     }, player.JumpBufferTime));
 
                 StartCoroutine(CoroutineHelper.Chain(
-                    CoroutineHelper.WaitUntil(() => player.isGrounded),
+                    CoroutineHelper.WaitUntil(() => player.IsGrounded),
                     CoroutineHelper.Do(() => {
                         if (withinJumpBuffer)
                         {
