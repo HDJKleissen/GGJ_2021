@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float JumpGraceTime;
     public float JumpBufferTime;
 
+    public float PlayerGravity = 4;
     public float horizontalVelocity;
     public bool isGrounded;
 
@@ -45,6 +46,9 @@ public class Player : MonoBehaviour
     {
         playerRigidBody.velocity = new Vector2(horizontalVelocity, playerRigidBody.velocity.y);
 
+        if (horizontalVelocity == 0)
+        {
+        }
         bool previousIsGrounded = isGrounded;
         isGrounded = Physics2D.OverlapArea(GroundCheckTopLeft.position, GroundCheckBottomRight.position, GroundLayer);
 
@@ -52,6 +56,11 @@ public class Player : MonoBehaviour
         if (isGrounded && JumpsRemaining != MaxJumps)
         {
             JumpsRemaining = MaxJumps;
+            playerRigidBody.gravityScale = 0;
+        }
+        else
+        {
+            playerRigidBody.gravityScale = PlayerGravity;
         }
 
         if (!isGrounded != previousIsGrounded)
@@ -68,6 +77,10 @@ public class Player : MonoBehaviour
             ));
 
         }
+    }
+
+    private void LateUpdate()
+    {
     }
 
     public void Jump(float jumpForce)
