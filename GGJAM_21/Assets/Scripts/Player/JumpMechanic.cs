@@ -21,7 +21,6 @@ public class JumpMechanic : MechanicBase
     {
         if (GameInputManager.GetKeyDown(MechanicButton))
         {
-            Debug.Log("Pressing Key: " + MechanicButton);
             // We have a jump remaining, jump immediately
             if (player.JumpsRemaining > 0)
             {

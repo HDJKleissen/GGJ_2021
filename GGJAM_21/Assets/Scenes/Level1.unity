@@ -2153,9 +2153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MechanicIsActive: 0
-  DashSpeed: 100
-  DashTime: 1
-  DashCooldownTime: 3
+  DashSpeed: 40
+  DashTime: 0.15
+  DashCooldownTime: 0.3
 --- !u!114 &1929493590
 MonoBehaviour:
   m_ObjectHideFlags: 0
