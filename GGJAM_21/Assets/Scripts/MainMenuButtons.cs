@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuButtons : MonoBehaviour
-{
-
+{ 
     public List<Button> menuButtons = new List<Button>();
 
     private void Awake()
@@ -16,8 +15,13 @@ public class MainMenuButtons : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Start click");
-        SceneManager.LoadScene("Level0");
+        LoadScene("Level0");
+    }
+
+    public void LoadScene(string sceneName)
+    {
+
+        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()
