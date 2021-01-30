@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class MoveLeftMechanic : MechanicBase
 {
-    public override string MechanicButton => "Horizontal";
-
     public float MoveSpeed;
 
+    public override string MechanicButton => "MoveLeft";
     public override void SetupMechanic(Player player)
     {
     }
 
     public override void ApplyMechanic(Player player)
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        // TODO: Bindable keys
-        if (horizontalInput < 0 && !player.IsDashing)
+        if (GameInputManager.GetKey(MechanicButton))
         {
-            player.HorizontalVelocity += horizontalInput * MoveSpeed;
+            if (!player.IsDashing)
+            {
+                player.HorizontalVelocity += -1 * MoveSpeed;
+            }
         }
     }
 }
