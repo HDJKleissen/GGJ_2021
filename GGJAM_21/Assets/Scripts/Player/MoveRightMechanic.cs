@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveRightMechanic : MechanicBase
 {
     public float MoveSpeed;
+    public override string MechanicButton => "MoveRight";
 
     public override void SetupMechanic(Player player)
     {
@@ -12,11 +13,9 @@ public class MoveRightMechanic : MechanicBase
 
     public override void ApplyMechanic(Player player)
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        // TODO: Bindable keys
-        if (horizontalInput > 0)
+        if (GameInputManager.GetKey(MechanicButton))
         {
-            player.horizontalVelocity += horizontalInput * MoveSpeed;
+            player.horizontalVelocity += 1 * MoveSpeed;
         }
     }
 

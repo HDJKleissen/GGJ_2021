@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class MechanicBase : MonoBehaviour
 {
     public bool MechanicIsActive = false;
+       
+    public abstract string MechanicButton { get; }
 
     public void Start()
     {
