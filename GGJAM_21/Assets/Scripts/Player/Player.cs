@@ -185,9 +185,21 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "goal")
         {
+            string currentScene = SceneManager.GetActiveScene().name;
+            string[] splitName = currentScene.Split('_');
+            int levelNum = int.Parse(splitName[1]);
             //go next scene
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene("Level_" + (levelNum+1));
         }
+        else if(collision.gameObject.tag == "Killbox")
+        {
+            StartCoroutine(CoroutineHelper.DelaySeconds(() => Die(), 2));
+        }
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Jump(float jumpForce)
