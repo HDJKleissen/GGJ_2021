@@ -19,14 +19,14 @@ public class JumpMechanic : MechanicBase
 
     public override void ApplyMechanic(Player player)
     {
-        // TODO: Bindable keys
-        if (Input.GetButtonDown(MechanicButton))
+        if (GameInputManager.GetKeyDown(MechanicButton))
         {
             // We have a jump remaining, jump immediately
             if (player.JumpsRemaining > 0)
             {
                 player.Jump(JumpForce);
-                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Jump");
+                // TODO The Jumpnumber counter for audio doesn't work if it triggers twice, this happens when DoubleJumpMechanic is active
+                PlayJumpSound(player);
             }
             else
             {
@@ -48,5 +48,20 @@ public class JumpMechanic : MechanicBase
                 ));
             }
         }
+    }
+
+    void PlayJumpSound(Player player)
+    {
+        int jumpNumber = SetJumpNumber(player);
+        FMOD.Studio.EventInstance jumpSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Jump");
+        jumpSound.setParameterByName("JumpNumber", jumpNumber, false);
+        jumpSound.start();
+        jumpSound.release();
+    }
+
+    public int SetJumpNumber(Player player)
+    {
+        //Debug.Log(player.MaxJumps + " " + player.JumpsRemaining);
+        return player.MaxJumps - player.JumpsRemaining;
     }
 }

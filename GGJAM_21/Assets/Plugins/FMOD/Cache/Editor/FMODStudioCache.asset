@@ -75,14 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 518027242534886886}
-  - {fileID: 3080195786320940523}
-  - {fileID: 2829608678791525521}
-  - {fileID: 7770857239941333726}
-  EditorEvents:
-  - {fileID: 1418634975742524313}
-  - {fileID: 6323825406355286523}
+  EditorBanks: []
+  EditorEvents: []
   EditorParameters: []
   MasterBanks:
   - {fileID: 3080195786320940523}
