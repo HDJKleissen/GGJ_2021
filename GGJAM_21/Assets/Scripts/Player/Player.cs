@@ -188,6 +188,15 @@ public class Player : MonoBehaviour
             //go next scene
             SceneManager.LoadScene("Level2");
         }
+        else if(collision.gameObject.tag == "Killbox")
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Jump(float jumpForce)
