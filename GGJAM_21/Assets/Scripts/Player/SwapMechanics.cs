@@ -6,7 +6,7 @@ public class SwapMechanics : MonoBehaviour
 {
     Player player;
     PlayerAnimationHandler playerAnimationHandler;
-
+    public MechanicsUI mechanicsUI;
     int nextPickUpId = 0;
     public int MaxMechanics = 3;
     public int TotalMechanicsActive = 0;
@@ -29,7 +29,11 @@ public class SwapMechanics : MonoBehaviour
         player = GetComponent<Player>();
         playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
 
-        foreach(MechanicBase mechanic in player.GetMechanics())
+        if (mechanicsUI == null)
+        {
+            MechanicsUI mechanicsUI = GameObject.FindGameObjectWithTag("MechanicsUI").GetComponent<MechanicsUI>();
+        }
+        foreach (MechanicBase mechanic in player.GetMechanics())
         {
             nameMechanicPairs.Add(mechanic.MechanicButton, mechanic);
         }
@@ -121,5 +125,6 @@ public class SwapMechanics : MonoBehaviour
             yield return null;
         }
         playerAnimationHandler.CheckActivatedMechanics();
+        mechanicsUI.CheckActivatedMechanics();
     }
 }

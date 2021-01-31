@@ -15,7 +15,7 @@ public class DashMechanic : MechanicBase
 
     public override void ApplyMechanic()
     {
-        if (Input.GetButtonDown(MechanicButton))
+        if (GameInputManager.GetKeyDown(MechanicButton))
         {
             player.DashSpeed = DashSpeed;
             player.Dash(MechanicButton, DashTime, DashCooldownTime);
