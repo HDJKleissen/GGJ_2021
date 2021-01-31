@@ -4,41 +4,18 @@ using System;
 
 public static class GameInputManager
 {
-    public static Dictionary<string, KeyCode> keyMapping;
-    public static string[] keyMaps = new string[]
+    public static Dictionary<string, KeyCode> keyMapping = new Dictionary<string, KeyCode>()
     {
-        "MoveLeft",
-        "MoveRight",
-        "Jump",
-        "DoubleJump",
-        "Dash",
-        "BackDash",
-        "Right"
+        { "MoveLeft", KeyCode.A },
+        { "MoveRight", KeyCode.D },
+        { "Jump", KeyCode.S },
+        { "DoubleJump", KeyCode.S },
+        { "Dash", KeyCode.Z },
+        { "BackDash",KeyCode.X },
+        { "Right", KeyCode.C },
+        { "Pause", KeyCode.P },
+        { "Restart", KeyCode.R },
     };
-    public static KeyCode[] defaults = new KeyCode[]
-    {
-        KeyCode.A,
-        KeyCode.D,
-        KeyCode.S,
-        KeyCode.S,
-        KeyCode.Z,
-        KeyCode.X,
-        KeyCode.C
-    };
-
-    static GameInputManager()
-    {
-        InitializeDictionary();
-    }
-
-    private static void InitializeDictionary()
-    {
-        keyMapping = new Dictionary<string, KeyCode>();
-        for (int i = 0; i < keyMaps.Length; ++i)
-        {
-            keyMapping.Add(keyMaps[i], defaults[i]);
-        }
-    }
 
     public static void SetKeyMap(string keyMap, KeyCode key)
     {
@@ -56,5 +33,4 @@ public static class GameInputManager
     {
         return Input.GetKey(keyMapping[keyMap]);
     }
-
 }
