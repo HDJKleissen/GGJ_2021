@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public bool IsDashing = false;
     public bool IsRunning = false;
     public bool IsCrouching = false;
+    public bool CanControl = false;
 
     List<MechanicBase> mechanics;
     public Transform SpriteTransform, BodyTransform, GroundedCheckTopLeft, GroundedCheckBottomRight;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour
     public Dictionary<string, Transform> nameToTransform = new Dictionary<string, Transform>();
 
 
-    Rigidbody2D playerRigidBody;
+    public Rigidbody2D playerRigidBody;
     BoxCollider2D playerBoxCollider;
     PlayerAnimationHandler playerAnimationHandler;
     int facing = 1;
@@ -86,17 +87,21 @@ public class Player : MonoBehaviour
         nameToTransform.Add("DoubleJump", DoubleJumpTransform);
         nameToTransform.Add("Dash", DashFrontTransform);
         nameToTransform.Add("BackDash", DashBackTransform);
+        playerRigidBody.bodyType = RigidbodyType2D.Kinematic;
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (MechanicBase mechanic in GetMechanics(true))
+        if (CanControl)
         {
-            mechanic.ApplyMechanic();
-        }
+            foreach (MechanicBase mechanic in GetMechanics(true))
+            {
+                mechanic.ApplyMechanic();
+            }
 
-        IsCrouching = !IsRunning && GameInputManager.GetKey("Crouch");
+            IsCrouching = !IsRunning && GameInputManager.GetKey("Crouch");
+        }
     }
 
     void FixedUpdate()
