@@ -11,6 +11,8 @@ public class SwapMechanics : MonoBehaviour
     public int MaxMechanics = 3;
     public int TotalMechanicsActive = 0;
 
+    Dictionary<string, MechanicBase> nameMechanicPairs = new Dictionary<string, MechanicBase>();
+
     public void UpdateTotalMechanicsActive()
     {
         TotalMechanicsActive = 0;
@@ -26,6 +28,12 @@ public class SwapMechanics : MonoBehaviour
     {
         player = GetComponent<Player>();
         playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
+
+        foreach(MechanicBase mechanic in player.GetMechanics())
+        {
+            nameMechanicPairs.Add(mechanic.MechanicButton, mechanic);
+        }
+
         UpdateTotalMechanicsActive();
     }
 
@@ -76,18 +84,18 @@ public class SwapMechanics : MonoBehaviour
         //right now shouldnt need to be inside a coroutine
         while (true)
         {
-            List<MechanicBase> playerMechanicList = player.GetMechanics();
-            //set the new mechanic active
-            foreach(MechanicBase m in playerMechanicList)
+            if(newMechanic == "DoubleJump")
             {
-                if(m.MechanicButton == newMechanic)
+                if (nameMechanicPairs["Jump"].MechanicIsActive)
                 {
-                    m.MechanicIsActive = true;
-                    nextPickUpId++;
-                    m.pickupOrderId = nextPickUpId;
+                    nameMechanicPairs["Jump"].MechanicIsActive = false;
                 }
             }
+            nameMechanicPairs[newMechanic].MechanicIsActive = true;
+            nextPickUpId++;
+            nameMechanicPairs[newMechanic].pickupOrderId = nextPickUpId;
 
+            
             //randomonly swap 1 mechanic for now
             UpdateTotalMechanicsActive();
             if (TotalMechanicsActive > MaxMechanics)
