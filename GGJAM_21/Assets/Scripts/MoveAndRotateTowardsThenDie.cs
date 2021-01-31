@@ -25,11 +25,8 @@ public class MoveAndRotateTowardsThenDie : MonoBehaviour
                 Destroy(Destination.gameObject);
             }
         }
-        float moveSpeed = MoveSpeed;
-        if(moveSpeed < player.velocity.magnitude)
-        {
-            moveSpeed = player.velocity.magnitude * 1.5f;
-        }
+        MoveSpeed = (player.velocity.magnitude + 5) * 1.5f;
+        
         transform.position = Vector3.Lerp(transform.position, Destination.position, Time.deltaTime * MoveSpeed);
         
         transform.rotation = Quaternion.Lerp(transform.rotation, Destination.rotation, Time.deltaTime * RotateSpeed);

@@ -105,8 +105,7 @@ public class SwapMechanics : MonoBehaviour
         MoveAndRotateTowardsThenDie marttd = mechanicAnim.AddComponent<MoveAndRotateTowardsThenDie>();
         marttd.Destination = player.nameToTransform[animationName];
         marttd.player = player.GetComponent<Rigidbody2D>();
-        marttd.MoveSpeed = player.MaxPlayerSpeed * 2;
-        marttd.RotateSpeed = 3;
+        marttd.RotateSpeed = 13;
 
         marttd.stringParameters["mechanicName"] = mechanicName;
         marttd.GetComponentInChildren<SpriteRenderer>().sortingLayerName = mechNameToSortingLayer[mechanicName];
@@ -118,20 +117,9 @@ public class SwapMechanics : MonoBehaviour
 
     void ActivateNewPart(MonoBehaviour instance)
     {
-        Debug.Log("pre add new mech");
-        for (int i = 0; i < activeMechanics.Count; i++)
-        {
-            Debug.Log(i + ": " + activeMechanics[i].MechanicButton);
-        }
-
         string mechanicName = (instance as MoveAndRotateTowardsThenDie).stringParameters["mechanicName"];
         nameMechanicPairs[mechanicName].MechanicIsActive = true;
         activeMechanics.Add(nameMechanicPairs[mechanicName]);
-        Debug.Log("added new mech");
-        for(int i = 0; i < activeMechanics.Count; i++)
-        {
-            Debug.Log(i + ": " + activeMechanics[i].MechanicButton);
-        }
 
         //randomonly swap 1 mechanic for now
         if (TotalMechanicsActive > MaxMechanics)
@@ -150,12 +138,6 @@ public class SwapMechanics : MonoBehaviour
         Debug.Log("lose mechanic");
         mechanic.MechanicIsActive = false;
         activeMechanics.Remove(mechanic);
-
-        for (int i = 0; i < activeMechanics.Count; i++)
-        {
-            Debug.Log(i + ": " + activeMechanics[i].MechanicButton);
-        }
-
     }
 
     private void OnPickUp(MechanicInstance newMechanic)
