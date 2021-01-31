@@ -7,21 +7,25 @@ public class SwapMechanics : MonoBehaviour
     Player player;
     PlayerAnimationHandler playerAnimationHandler;
     public MechanicsUI mechanicsUI;
-    int nextPickUpId = 0;
+
     public int MaxMechanics = 3;
-    public int TotalMechanicsActive = 0;
+    public int TotalMechanicsActive {
+        get { return activeMechanics.Count; }
+    }
 
     Dictionary<string, MechanicBase> nameMechanicPairs = new Dictionary<string, MechanicBase>();
+    List<MechanicBase> activeMechanics = new List<MechanicBase>();
 
-    public void UpdateTotalMechanicsActive()
+    Dictionary<string, string> mechNameToSortingLayer = new Dictionary<string, string>
     {
-        TotalMechanicsActive = 0;
-        foreach (MechanicBase m in player.GetMechanics())
-        {
-            if (m.MechanicIsActive)
-                TotalMechanicsActive++;
-        }
-    }
+        {"MoveLeft", "Legs" },
+        {"MoveRight", "Legs" },
+        {"Run", "Legs" },
+        {"Jump", "Jumpers" },
+        {"DoubleJump", "Jumpers" },
+        {"Dash", "Dashers" },
+        {"BackDash", "Dashers" }
+    };
 
     // Start is called before the first frame update
     void Start()
@@ -36,95 +40,154 @@ public class SwapMechanics : MonoBehaviour
         foreach (MechanicBase mechanic in player.GetMechanics())
         {
             nameMechanicPairs.Add(mechanic.MechanicButton, mechanic);
+            if (mechanic.MechanicIsActive)
+            {
+                activeMechanics.Add(mechanic);
+            }
         }
-
-        UpdateTotalMechanicsActive();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log("Collision found with anything");
         if (collision.gameObject.tag == "mechanic")
         {
-            StartCoroutine(OnPickUp(collision.gameObject.GetComponent<MechanicInstance>().mechanicName));
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<Collider2D>().enabled = false;
+            OnPickUp(collision.gameObject.GetComponent<MechanicInstance>());
         }
     }
 
-    //get form the active mechanics the oldest one that is active
-    MechanicBase GetOldestMechanic()
+    void GainMechanic(MechanicInstance mechanic)
     {
-        int smallestId = 0;
-        MechanicBase mb = player.GetMechanics()[0];
-        foreach(MechanicBase m in player.GetMechanics())
+        if(mechanic.mechanicName == "Run")
         {
-            //skip inactive mechanics
-            if (!m.MechanicIsActive)
+            if (nameMechanicPairs["MoveLeft"].MechanicIsActive)
             {
-                Debug.Log("Skipping: " + m);
-                continue;
+                GameObject leftLeg = mechanic.GetChildByName("LeftLeg");
+                GameObject leftLegAnim = Instantiate(leftLeg, leftLeg.transform.position, leftLeg.transform.rotation);
+                StartMechanicGainAnimation(mechanic.mechanicName,"RunLeft", leftLegAnim);
+                Destroy(mechanic.gameObject);
             }
-
-            if(m.pickupOrderId <= smallestId)
+            if (nameMechanicPairs["MoveRight"].MechanicIsActive)
             {
-                smallestId = m.pickupOrderId;
-                mb = m;
+                GameObject rightLeg = mechanic.GetChildByName("RightLeg");
+                GameObject rightLegAnim = Instantiate(rightLeg, rightLeg.transform.position, rightLeg.transform.rotation);
+                StartMechanicGainAnimation(mechanic.mechanicName, "RunRight", rightLegAnim, nameMechanicPairs["MoveLeft"].MechanicIsActive);
+                Destroy(mechanic.gameObject);
             }
         }
-
-        return mb;
+        else if (mechanic.mechanicName == "DoubleJump")
+        {
+            GameObject booster = mechanic.GetChildByName("DoubleJumper");
+            GameObject boosterAnim = Instantiate(booster, booster.transform.position, booster.transform.rotation);
+            StartMechanicGainAnimation(mechanic.mechanicName, "DoubleJump", boosterAnim);
+            Destroy(mechanic.gameObject);
+            GameObject spring = mechanic.GetChildByName("Jumper");
+            GameObject springAnim = Instantiate(spring, spring.transform.position, spring.transform.rotation);
+            StartMechanicGainAnimation(mechanic.mechanicName, "Jump", springAnim, true);
+            Destroy(mechanic.gameObject);
+        }
+        else
+        {
+            GameObject mechanicAnim = Instantiate(mechanic.gameObject);
+            StartMechanicGainAnimation(mechanic.mechanicName, mechanic.mechanicName, mechanicAnim);
+            Destroy(mechanic.gameObject);
+        }
     }
 
-    private IEnumerator OnPickUp(string newMechanic)
+    private void StartMechanicGainAnimation(string mechanicName, string animationName, GameObject mechanicAnim, bool isExtraPart = false)
     {
-        bool input = false;
+        MoveAndRotateTowardsThenDie marttd = mechanicAnim.AddComponent<MoveAndRotateTowardsThenDie>();
+        marttd.Destination = player.nameToTransform[animationName];
+        marttd.player = player.GetComponent<Rigidbody2D>();
+        marttd.MoveSpeed = player.MaxPlayerSpeed * 2;
+        marttd.RotateSpeed = 3;
 
-        //should perhaps start a lil animation or someshit so its clear ur swapping mechanics
-        //right now shouldnt need to be inside a coroutine
-        while (true)
+        marttd.stringParameters["mechanicName"] = mechanicName;
+        marttd.GetComponentInChildren<SpriteRenderer>().sortingLayerName = mechNameToSortingLayer[mechanicName];
+        if (!isExtraPart)
         {
-            if (newMechanic == "DoubleJump")
-            {
-                if (nameMechanicPairs["Jump"].MechanicIsActive)
-                {
-                    nameMechanicPairs["Jump"].MechanicIsActive = false;
-                }
-            }
-            if (newMechanic == "Jump")
-            {
-                if (nameMechanicPairs["DoubleJump"].MechanicIsActive)
-                {
-                    nameMechanicPairs["DoubleJump"].MechanicIsActive = false;
-                }
-            }
-            nameMechanicPairs[newMechanic].MechanicIsActive = true;
-            nextPickUpId++;
-            nameMechanicPairs[newMechanic].pickupOrderId = nextPickUpId;
-
-            
-            //randomonly swap 1 mechanic for now
-            UpdateTotalMechanicsActive();
-            if (TotalMechanicsActive > MaxMechanics)
-            {
-                //random
-                //player.mechanics[Random.Range(0, player.mechanics.Count - 1)].MechanicIsActive = false;
-                GetOldestMechanic().MechanicIsActive = false;
-            }
-
-
-            input = true;
-
-            if (input)
-                break;  
-            
-            yield return null;
+            marttd.OnDestroyEvent += ActivateNewPart;
         }
+    }
+
+    void ActivateNewPart(MonoBehaviour instance)
+    {
+        Debug.Log("pre add new mech");
+        for (int i = 0; i < activeMechanics.Count; i++)
+        {
+            Debug.Log(i + ": " + activeMechanics[i].MechanicButton);
+        }
+
+        string mechanicName = (instance as MoveAndRotateTowardsThenDie).stringParameters["mechanicName"];
+        nameMechanicPairs[mechanicName].MechanicIsActive = true;
+        activeMechanics.Add(nameMechanicPairs[mechanicName]);
+        Debug.Log("added new mech");
+        for(int i = 0; i < activeMechanics.Count; i++)
+        {
+            Debug.Log(i + ": " + activeMechanics[i].MechanicButton);
+        }
+
+        //randomonly swap 1 mechanic for now
+        if (TotalMechanicsActive > MaxMechanics)
+        {
+            MechanicBase oldestMechanic = activeMechanics[0];
+            LoseMechanic(oldestMechanic);
+        }
+
+
         playerAnimationHandler.CheckActivatedMechanics();
         mechanicsUI.CheckActivatedMechanics();
+    }
+
+    void LoseMechanic(MechanicBase mechanic)
+    {
+        Debug.Log("lose mechanic");
+        mechanic.MechanicIsActive = false;
+        activeMechanics.Remove(mechanic);
+
+        for (int i = 0; i < activeMechanics.Count; i++)
+        {
+            Debug.Log(i + ": " + activeMechanics[i].MechanicButton);
+        }
+
+    }
+
+    private void OnPickUp(MechanicInstance newMechanic)
+    {
+        //should perhaps start a lil animation or someshit so its clear ur swapping mechanics
+        //right now shouldnt need to be inside a coroutine
+        if (newMechanic.mechanicName == "DoubleJump")
+        {
+            if (nameMechanicPairs["Jump"].MechanicIsActive)
+            {
+                nameMechanicPairs["Jump"].MechanicIsActive = false;
+                activeMechanics.Remove(nameMechanicPairs["Jump"]);
+            }
+        }
+        if (newMechanic.mechanicName == "Jump") // Allow downgrade for now
+        {
+            if (nameMechanicPairs["DoubleJump"].MechanicIsActive)
+            {
+                nameMechanicPairs["DoubleJump"].MechanicIsActive = false;
+                activeMechanics.Remove(nameMechanicPairs["DoubleJump"]);
+            }
+        }
+        if (newMechanic.mechanicName == "Run") // Only pickup Run if we have a leg to stand on
+        {
+            if (nameMechanicPairs["MoveLeft"].MechanicIsActive || nameMechanicPairs["MoveRight"].MechanicIsActive)
+            {
+                GainMechanic(newMechanic);
+            }
+        }
+        else
+        {
+            GainMechanic(newMechanic);
+        }
     }
 }

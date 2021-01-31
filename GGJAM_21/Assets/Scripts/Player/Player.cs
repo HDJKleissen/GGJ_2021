@@ -27,6 +27,10 @@ public class Player : MonoBehaviour
     public float RotationSpeed;
     public float GroundCheckRayLength;
 
+    public Transform LeftLegTransform, RightLegTransform, LeftFastLegTransform, RightFastLegTransform, JumpTransform, DoubleJumpTransform, DashFrontTransform, DashBackTransform;
+    public Dictionary<string, Transform> nameToTransform = new Dictionary<string, Transform>();
+
+
     Rigidbody2D playerRigidBody;
     BoxCollider2D playerBoxCollider;
     PlayerAnimationHandler playerAnimationHandler;
@@ -74,6 +78,14 @@ public class Player : MonoBehaviour
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerBoxCollider = GetComponent<BoxCollider2D>();
         playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
+        nameToTransform.Add("MoveLeft", LeftLegTransform);
+        nameToTransform.Add("MoveRight", RightLegTransform);
+        nameToTransform.Add("RunLeft", LeftFastLegTransform);
+        nameToTransform.Add("RunRight", RightFastLegTransform);
+        nameToTransform.Add("Jump", JumpTransform);
+        nameToTransform.Add("DoubleJump", DoubleJumpTransform);
+        nameToTransform.Add("Dash", DashFrontTransform);
+        nameToTransform.Add("BackDash", DashBackTransform);
     }
 
     // Update is called once per frame
