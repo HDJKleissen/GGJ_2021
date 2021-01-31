@@ -8,13 +8,25 @@ public class SwapMechanics : MonoBehaviour
     PlayerAnimationHandler playerAnimationHandler;
 
     int nextPickUpId = 0;
-    public int maxMechanics = 3;
+    public int MaxMechanics = 3;
+    public int TotalMechanicsActive = 0;
+
+    public void UpdateTotalMechanicsActive()
+    {
+        TotalMechanicsActive = 0;
+        foreach (MechanicBase m in player.GetMechanics())
+        {
+            if (m.MechanicIsActive)
+                TotalMechanicsActive++;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Player>();
         playerAnimationHandler = GetComponent<PlayerAnimationHandler>();
+        UpdateTotalMechanicsActive();
     }
 
     // Update is called once per frame
@@ -77,13 +89,8 @@ public class SwapMechanics : MonoBehaviour
             }
 
             //randomonly swap 1 mechanic for now
-            int totalMechanicsActive = 0;
-            foreach (MechanicBase m in playerMechanicList)
-            {
-                if (m.MechanicIsActive)
-                    totalMechanicsActive++;
-            }
-            if(totalMechanicsActive > maxMechanics)
+            UpdateTotalMechanicsActive();
+            if (TotalMechanicsActive > MaxMechanics)
             {
                 //random
                 //player.mechanics[Random.Range(0, player.mechanics.Count - 1)].MechanicIsActive = false;

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public bool IsGrounded;
     public bool IsDashing = false;
     public bool IsRunning = false;
+    public bool IsCrouching = false;
 
     List<MechanicBase> mechanics;
     public Transform SpriteTransform, BodyTransform, GroundedCheckTopLeft, GroundedCheckBottomRight;
@@ -82,6 +83,8 @@ public class Player : MonoBehaviour
         {
             mechanic.ApplyMechanic();
         }
+
+        IsCrouching = !IsRunning && GameInputManager.GetKey("Crouch");
     }
 
     void FixedUpdate()
@@ -145,6 +148,11 @@ public class Player : MonoBehaviour
             }
             // If both keys are pressed, don't change facing.
         }
+        else if (IsCrouching)
+        {
+            // Scootin
+            playerRigidBody.sharedMaterial.friction = 0.005f;
+        }
         else
         {
             // No input, so set enormously high friction so the player stands still on slopes
@@ -162,6 +170,10 @@ public class Player : MonoBehaviour
         else if (IsRunning)
         {
             ModifiedHorizontalVelocity *= RunSpeedModifier;
+        }
+        else if(IsCrouching && ModifiedHorizontalVelocity != 0)
+        {
+            ModifiedHorizontalVelocity /= 4;
         }
 
         BodyTransform.localScale = new Vector3(facing, BodyTransform.localScale.y, BodyTransform.localScale.z);
