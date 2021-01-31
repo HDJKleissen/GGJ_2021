@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 497116533}
   - component: {fileID: 497116532}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Gradient
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 771825080}
   - component: {fileID: 771825079}
   m_Layer: 5
-  m_Name: GameLogo
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
