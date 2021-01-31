@@ -154,10 +154,10 @@ TextureImporter:
       name: MainCharacter_body_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 409.5
-        width: 409.5
-        height: 409.5
+        x: 79
+        y: 474
+        width: 243
+        height: 289
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: MainCharacter_body_1
       rect:
         serializedVersion: 2
-        x: 409
-        y: 409.5
-        width: 409.5
-        height: 409.5
+        x: 479
+        y: 474
+        width: 243
+        height: 289
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: MainCharacter_body_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0.5
-        width: 409.5
-        height: 409.5
+        x: 79
+        y: 75
+        width: 243
+        height: 289
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: MainCharacter_body_3
       rect:
         serializedVersion: 2
-        x: 409
-        y: 0.5
-        width: 409.5
-        height: 409.5
+        x: 479
+        y: 75
+        width: 243
+        height: 289
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
