@@ -287,7 +287,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791289577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0.3}
+  m_LocalPosition: {x: -1, y: -0.1, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2051019297}
@@ -547,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500300523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 0, z: 0.5}
+  m_LocalPosition: {x: 1.2, y: -0.1, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2051019297}
@@ -662,7 +662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854685706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 0, z: 0.5}
+  m_LocalPosition: {x: -1.2, y: -0.1, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2051019297}
@@ -996,7 +996,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009791001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0.3}
+  m_LocalPosition: {x: 1, y: -0.1, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2051019297}
@@ -1132,6 +1132,7 @@ GameObject:
   - component: {fileID: 7602161008589237294}
   - component: {fileID: 7602161008589237283}
   - component: {fileID: 7602161008589237282}
+  - component: {fileID: 6343318107914773335}
   - component: {fileID: 7602161008589237281}
   - component: {fileID: 7602161008589237280}
   - component: {fileID: 2947885285841014053}
@@ -1203,7 +1204,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1214,8 +1215,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.2}
+  m_Size: {x: 1.1, y: 0.3}
   m_EdgeRadius: 0
+--- !u!70 &6343318107914773335
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7602161008589237287}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.05}
+  m_Size: {x: 1, y: 1.3}
+  m_Direction: 0
 --- !u!114 &7602161008589237281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,10 +1251,12 @@ MonoBehaviour:
   JumpBufferTime: 0.2
   MaxPlayerFallSpeed: 15
   PlayerFloatSpeed: 8
+  MaxPlayerSpeed: 8
   PlayerGravity: 4
   RunSpeedModifier: 2
   DashSpeed: 0
-  HorizontalVelocity: 0
+  PlayerInputLeft: 0
+  PlayerInputRight: 0
   ModifiedHorizontalVelocity: 0
   IsGrounded: 0
   IsDashing: 0
@@ -1264,8 +1283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0d7feaf9eff1e64599cf6c93a617b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 0
+  mechanicIsActive: 0
   pickupOrderId: 0
+  player: {fileID: 0}
   JumpForce: 25
 --- !u!114 &2947885285841014053
 MonoBehaviour:
@@ -1279,8 +1299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c9077824677f3742b0383cd0d604fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 0
+  mechanicIsActive: 0
   pickupOrderId: 0
+  player: {fileID: 0}
   JumpForce: 25
 --- !u!114 &7602161008589237288
 MonoBehaviour:
@@ -1294,8 +1315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abed3c83ce156b41921d8fa1259641b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 1
+  mechanicIsActive: 1
   pickupOrderId: 0
+  player: {fileID: 0}
   MoveSpeed: 8
 --- !u!114 &7602161008589237295
 MonoBehaviour:
@@ -1309,8 +1331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef668e9837c94942b689c249341da92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 1
+  mechanicIsActive: 1
   pickupOrderId: 0
+  player: {fileID: 0}
   MoveSpeed: 8
 --- !u!114 &1929493589
 MonoBehaviour:
@@ -1324,8 +1347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4342ea0d41190349b07edd7c2c51bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 0
+  mechanicIsActive: 0
   pickupOrderId: 0
+  player: {fileID: 0}
   DashSpeed: 20
   DashTime: 0.3
   DashCooldownTime: 0.3
@@ -1341,8 +1365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b83093023420974b88b1eea431d8d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 0
+  mechanicIsActive: 0
   pickupOrderId: 0
+  player: {fileID: 0}
   DashSpeed: 20
   DashTime: 0.3
   DashCooldownTime: 0.3
@@ -1391,8 +1416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e258d5adc71b43958c75b7541f268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 0
+  mechanicIsActive: 0
   pickupOrderId: 0
+  player: {fileID: 0}
   RunSpeedModifier: 2
 --- !u!114 &1381074476561546814
 MonoBehaviour:
@@ -1406,8 +1432,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b83093023420974b88b1eea431d8d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 0
+  mechanicIsActive: 0
   pickupOrderId: 0
+  player: {fileID: 0}
   DashSpeed: 20
   DashTime: 0.1
   DashCooldownTime: 0.5
@@ -1423,8 +1450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4342ea0d41190349b07edd7c2c51bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechanicIsActive: 0
+  mechanicIsActive: 0
   pickupOrderId: 0
+  player: {fileID: 0}
   DashSpeed: 20
   DashTime: 0.1
   DashCooldownTime: 0.5

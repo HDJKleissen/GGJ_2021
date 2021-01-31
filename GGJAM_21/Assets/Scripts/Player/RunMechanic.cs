@@ -6,12 +6,12 @@ public class RunMechanic : MechanicBase
 
     public float RunSpeedModifier;
 
-    public override void SetupMechanic(Player player)
+    public override void SetupMechanic()
     {
         player.RunSpeedModifier = RunSpeedModifier;
     }
 
-    public override void ApplyMechanic(Player player)
+    public override void ApplyMechanic()
     {
         if (Input.GetButtonDown("Run"))
         {
@@ -22,5 +22,8 @@ public class RunMechanic : MechanicBase
         {
             player.IsRunning = false;
         }
+    }
+    public override void ShutdownMechanic()
+    {
     }
 }
