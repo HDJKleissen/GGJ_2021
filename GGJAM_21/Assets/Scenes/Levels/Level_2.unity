@@ -6045,7 +6045,7 @@ PrefabInstance:
       objectReference: {fileID: 1120287576}
     - target: {fileID: 2947885285841014053, guid: 38a65f51249f9074da413ec3f5d3d2fd, type: 3}
       propertyPath: mechanicIsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7602161008589237287, guid: 38a65f51249f9074da413ec3f5d3d2fd, type: 3}
       propertyPath: m_Name
