@@ -100,7 +100,7 @@
 			<value>0.375</value>
 		</property>
 		<property name="volume">
-			<value>-18</value>
+			<value>-9</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
@@ -142,7 +142,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>5.5</value>
+			<value>9</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{9486c512-e223-4c75-ba99-3e19407c2f2d}">
@@ -150,7 +150,7 @@
 			<value>volume</value>
 		</property>
 		<property name="amount">
-			<value>2.5</value>
+			<value>3</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{91235d12-1c73-4968-a55a-d5de47943686}">
