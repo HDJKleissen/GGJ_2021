@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: bc4cd37acb026ca4da36f7737fc83a5e
+guid: 67b5f81e33827e847b1951a9baa007ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3607162742232980674
-    second: MenuButtonsSmall_0
+      213: 2729183155972591176
+    second: MenuSliders_0
   - first:
-      213: -5265386508659668887
-    second: MenuButtonsSmall_1
-  - first:
-      213: 807578197560790450
-    second: MenuButtonsSmall_2
+      213: 3535096112339095274
+    second: MenuSliders_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -132,29 +129,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MenuButtonsSmall_0
+      name: MenuSliders_0
       rect:
         serializedVersion: 2
-        x: 180
-        y: 378
-        width: 109
-        height: 105
+        x: 27
+        y: 115
+        width: 446
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e33ed26f898c0fdc0800000000000000
-      internalID: -3607162742232980674
+      spriteID: 84ec9bade9100e520800000000000000
+      internalID: 2729183155972591176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MenuButtonsSmall_1
+      name: MenuSliders_1
       rect:
         serializedVersion: 2
-        x: 178
-        y: 251
-        width: 115
-        height: 108
+        x: 28
+        y: 47
+        width: 58
+        height: 51
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,29 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 968c43a1ed69de6b0800000000000000
-      internalID: -5265386508659668887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MenuButtonsSmall_2
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 50
-        width: 126
-        height: 133
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2bd06f98718153b00800000000000000
-      internalID: 807578197560790450
+      spriteID: aee06d63f2f2f0130800000000000000
+      internalID: 3535096112339095274
       vertices: []
       indices: 
       edges: []
@@ -213,7 +177,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 229f7c5b10694bf4d99af0c57c60d9c7
+    spriteID: c4d2359d063373b4b85187a49b217891
     internalID: 0
     vertices: []
     indices: 

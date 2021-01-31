@@ -1395,7 +1395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8233071653059976297, guid: 813ccc9b8847d9f40b2c0e633cf45762, type: 3}
+  m_Sprite: {fileID: 9060215553278879933, guid: 51283307d0f101f44b9e0bda0304620e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4811,12 +4811,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  MoveLeft: {fileID: 490757047260887653}
-  MoveRight: {fileID: 1730101560267817931}
-  Run: {fileID: 8645041211831364134}
-  Jump: {fileID: 921529512088100717}
-  DoubleJump: {fileID: 1984856614449306774}
-  DashForward: {fileID: 1103394495372655580}
-  DashBack: {fileID: 8369638079800520999}
+  MoveLeft: {fileID: 6214086432997532091}
+  MoveRight: {fileID: 6426843257992420833}
+  Run: {fileID: 81440674046896962}
+  Jump: {fileID: 2123200504804761112}
+  DoubleJump: {fileID: 6548971083406620162}
+  DashForward: {fileID: 5975630670377140335}
+  DashBack: {fileID: 5067411374993123555}
   ActivatedColor: {r: 0.4, g: 1, b: 0.43529412, a: 1}
   DeactivatedColor: {r: 1, g: 0.4, b: 0.4117647, a: 1}

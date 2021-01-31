@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    GameObject actualTarget;
     public GameObject target;
     Player playerScript;
     public float LowerLevelBoundsY = 0;
@@ -14,6 +15,25 @@ public class CameraController : MonoBehaviour
     {
         attachedCamera = GetComponent<Camera>();
         playerScript = target.GetComponent<Player>();
+        actualTarget = GameObject.FindGameObjectWithTag("goal");
+        if(actualTarget != null)
+        {
+            Vector3 acTarPos = actualTarget.transform.position;
+            transform.position = new Vector3(acTarPos.x, acTarPos.y, transform.position.z);
+            StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+            {
+                actualTarget = target;
+                playerScript.CanControl = true;
+            }, 2f));
+            StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+            {
+                playerScript.playerRigidBody.bodyType = RigidbodyType2D.Dynamic;
+            }, 2.5f));
+        }
+        else
+        {
+            actualTarget = target;
+        }
     }
 
     // Update is called once per frame
@@ -22,7 +42,7 @@ public class CameraController : MonoBehaviour
         float camHeight = (attachedCamera.transform.position - attachedCamera.ViewportToWorldPoint(new Vector3(0.5f, 1, attachedCamera.transform.position.z))).y;
         float lowestCamY = Mathf.Max(
             LowerLevelBoundsY + camHeight * 1.2f,
-            target.transform.position.y);
+            actualTarget.transform.position.y);
 
         float extraY = 0;
 
@@ -33,7 +53,7 @@ public class CameraController : MonoBehaviour
 
         transform.position = Vector3.Lerp(
             transform.position, 
-            new Vector3(target.transform.position.x, lowestCamY + extraY, transform.position.z), 
+            new Vector3(actualTarget.transform.position.x, lowestCamY + extraY, transform.position.z), 
             Time.deltaTime * CameraSpeed * (lowestCamY < LowerLevelBoundsY + camHeight * 1.25f? 1.2f: 1));
     }
 }

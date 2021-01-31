@@ -15,7 +15,6 @@ public abstract class MechanicBase : MonoBehaviour
         }
     }
 
-    public int pickupOrderId = 0;
     public abstract string MechanicButton { get; }
 
     public Player player;

@@ -9,7 +9,21 @@ public class Audio_Music_Player : MonoBehaviour
     public float bleeps;
     public float beat;
 
-    public SwapMechanics player;
+    bool triedToFindPlayer = false;
+
+
+    public SwapMechanics Player {
+        get {
+            if (player == null && !triedToFindPlayer)
+            {
+                player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<SwapMechanics>();
+                triedToFindPlayer = true;
+            }
+            return player;
+        }
+    }
+
+    SwapMechanics player;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +35,6 @@ public class Audio_Music_Player : MonoBehaviour
 
     private void Update()
     {
-        if (player == null)
-        {
-            player = GameObject.Find("Player").GetComponent<SwapMechanics>();
-        }
         checkTheVibe();
     }
 
@@ -34,9 +44,9 @@ public class Audio_Music_Player : MonoBehaviour
         glitches = 0;
         bleeps = 0;
         beat = 0;
-        if (player != null)
+        if (Player != null)
         {
-            int mechanicsActive = player.TotalMechanicsActive;
+            int mechanicsActive = Player.TotalMechanicsActive;
 
             if (mechanicsActive >= 1)
             {

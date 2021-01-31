@@ -1251,6 +1251,14 @@ MonoBehaviour:
     m_Bits: 8
   RotationSpeed: 5
   GroundCheckRayLength: 0.1
+  LeftLegTransform: {fileID: 1854685707}
+  RightLegTransform: {fileID: 1500300524}
+  LeftFastLegTransform: {fileID: 791289578}
+  RightFastLegTransform: {fileID: 2009791002}
+  JumpTransform: {fileID: 1868468842}
+  DoubleJumpTransform: {fileID: 224723118}
+  DashFrontTransform: {fileID: 1169073788}
+  DashBackTransform: {fileID: 545033812}
   RotationDestination: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &7602161008589237280
 MonoBehaviour:
@@ -1265,7 +1273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mechanicIsActive: 0
-  pickupOrderId: 0
   player: {fileID: 0}
   JumpForce: 25
 --- !u!114 &2947885285841014053
@@ -1281,7 +1288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mechanicIsActive: 0
-  pickupOrderId: 0
   player: {fileID: 0}
   JumpForce: 25
 --- !u!114 &7602161008589237288
@@ -1297,7 +1303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mechanicIsActive: 0
-  pickupOrderId: 0
   player: {fileID: 0}
   MoveSpeed: 8
 --- !u!114 &7602161008589237295
@@ -1313,7 +1318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mechanicIsActive: 0
-  pickupOrderId: 0
   player: {fileID: 0}
   MoveSpeed: 8
 --- !u!114 &1929493589
@@ -1329,7 +1333,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mechanicIsActive: 0
-  pickupOrderId: 0
   player: {fileID: 0}
   DashSpeed: 20
   DashTime: 0.3
@@ -1347,7 +1350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mechanicIsActive: 0
-  pickupOrderId: 0
   player: {fileID: 0}
   DashSpeed: 20
   DashTime: 0.3
@@ -1364,8 +1366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d3165cfdd2e5b458c7db26f614e2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mechanicsUI: {fileID: 0}
   MaxMechanics: 3
-  TotalMechanicsActive: 0
 --- !u!114 &1929493591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,6 +1402,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mechanicIsActive: 0
-  pickupOrderId: 0
   player: {fileID: 0}
   RunSpeedModifier: 2
