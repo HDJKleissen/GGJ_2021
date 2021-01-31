@@ -14,7 +14,7 @@ public class Audio_Music_Player : MonoBehaviour
 
     public SwapMechanics Player {
         get {
-            if (player == null && !triedToFindPlayer)
+            if (player == null)
             {
                 player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<SwapMechanics>();
                 triedToFindPlayer = true;
