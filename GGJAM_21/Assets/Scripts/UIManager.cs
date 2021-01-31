@@ -1,17 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    public GameObject Menu;
-    public GameObject GameUI;
+    public GameObject PauseMenu;
+    public GameObject SmallUIButtons;
 
     bool paused = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Unpause();
     }
 
     // Update is called once per frame
@@ -37,16 +37,16 @@ public class PauseManager : MonoBehaviour
 
     public void Pause()
     {
-        Menu.SetActive(true);
-        GameUI.SetActive(false);
+        PauseMenu.SetActive(true);
+        SmallUIButtons.SetActive(false);
         Time.timeScale = 0;
         paused = true;
     }
 
     public void Unpause()
     {
-        Menu.SetActive(false);
-        GameUI.SetActive(true);
+        PauseMenu.SetActive(false);
+        SmallUIButtons.SetActive(true);
         Time.timeScale = 1;
         paused = false;
     }

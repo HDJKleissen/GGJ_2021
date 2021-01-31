@@ -44,3 +44,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Spaceship
+    uniqueID: 2605871539
+    locked: 0
+  - name: Terrain
+    uniqueID: 3168626089
+    locked: 0
+  - name: Legs
+    uniqueID: 1518305547
+    locked: 0
+  - name: Dashers
+    uniqueID: 286261905
+    locked: 0
+  - name: Jumpers
+    uniqueID: 1244415423
+    locked: 0
+  - name: PlayerBody
+    uniqueID: 1910265903
+    locked: 0
+  - name: Pickups
+    uniqueID: 2500920841
+    locked: 0

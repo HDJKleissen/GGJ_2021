@@ -21,7 +21,7 @@ public class RandomlyFlyOverScreen : MonoBehaviour
 
     void StartNewRun()
     {
-        transform.position = new Vector3(Random.Range(-40, 40), Random.Range(-20, 50), transform.position.z);
+        transform.position = new Vector3(Random.Range(-40, 40), Random.Range(0, 50), transform.position.z);
         rigidBody2D.velocity = new Vector2(-transform.position.x / 40 * 25, Random.Range(-15, 15));
         rotationSpeed = Random.Range(-Mathf.Abs(transform.position.x / 50 * 35), Mathf.Abs(transform.position.x / 500 * 35));
         StartCoroutine(CoroutineHelper.DelaySeconds(() => StartNewRun(), Random.Range(8, 20)));
