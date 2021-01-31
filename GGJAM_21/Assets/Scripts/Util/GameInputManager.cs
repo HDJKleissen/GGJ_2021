@@ -8,6 +8,7 @@ public static class GameInputManager
     {
         { "MoveLeft", KeyCode.A },
         { "MoveRight", KeyCode.D },
+        { "Run", KeyCode.LeftShift },
         { "Jump", KeyCode.W },
         { "DoubleJump", KeyCode.W },
         { "Dash", KeyCode.Z },
@@ -28,6 +29,10 @@ public static class GameInputManager
     public static bool GetKeyDown(string keyMap)
     {
         return Input.GetKeyDown(keyMapping[keyMap]);
+    }
+    public static bool GetKeyUp(string keyMap)
+    {
+        return Input.GetKeyUp(keyMapping[keyMap]);
     }
 
     public static bool GetKey(string keyMap)

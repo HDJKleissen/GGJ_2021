@@ -1395,7 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5df98d5709dfc94dafecf47ccf0dcdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Body: {fileID: 0}
+  Body: {fileID: 1892539163}
   LeftLeg: {fileID: 1854685706}
   RightLeg: {fileID: 1500300523}
   FastLeftLeg: {fileID: 791289577}

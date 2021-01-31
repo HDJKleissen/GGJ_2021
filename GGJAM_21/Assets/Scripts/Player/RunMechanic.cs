@@ -13,12 +13,12 @@ public class RunMechanic : MechanicBase
 
     public override void ApplyMechanic()
     {
-        if (Input.GetButtonDown("Run"))
+        if (GameInputManager.GetKeyDown(MechanicButton))
         {
             player.IsRunning = true;
         }
 
-        if (Input.GetButtonUp("Run"))
+        if (GameInputManager.GetKeyUp(MechanicButton))
         {
             player.IsRunning = false;
         }

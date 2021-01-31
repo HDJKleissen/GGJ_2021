@@ -16,7 +16,6 @@ public abstract class MoveMechanic : MechanicBase
         {
             if (!player.IsDashing)
             {
-                Debug.Log("moooooveing");
                 SetPlayerInput(direction * MoveSpeed);
             }
         }

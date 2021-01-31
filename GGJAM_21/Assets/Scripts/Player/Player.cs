@@ -230,7 +230,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("GameEndScreen");
             }
         }
         else if(collision.gameObject.tag == "Killbox")
