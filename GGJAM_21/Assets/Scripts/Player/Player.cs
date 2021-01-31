@@ -140,6 +140,7 @@ public class Player : MonoBehaviour
         // We're on the ground, so reset jump amount (isgrounded && !previousisgrounded)
         else if(!previousIsGrounded)
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Land");
             if (JumpsRemaining != MaxJumps)
             {
                 JumpsRemaining = MaxJumps;
