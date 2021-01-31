@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject target;
+    Player playerScript;
     public float LowerLevelBoundsY = 0;
 
     Camera attachedCamera;
@@ -12,6 +13,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         attachedCamera = GetComponent<Camera>();
+        playerScript = target.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -22,9 +24,16 @@ public class CameraController : MonoBehaviour
             LowerLevelBoundsY + camHeight * 1.2f,
             target.transform.position.y);
 
+        float extraY = 0;
+
+        if(playerScript != null)
+        {
+            extraY = playerScript.IsCrouching ? -camHeight / 2 : 0;
+        }
+
         transform.position = Vector3.Lerp(
             transform.position, 
-            new Vector3(target.transform.position.x, lowestCamY, transform.position.z), 
+            new Vector3(target.transform.position.x, lowestCamY + extraY, transform.position.z), 
             Time.deltaTime * CameraSpeed * (lowestCamY < LowerLevelBoundsY + camHeight * 1.25f? 1.2f: 1));
     }
 }

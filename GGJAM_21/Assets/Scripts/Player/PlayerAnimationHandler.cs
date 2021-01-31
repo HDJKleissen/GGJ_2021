@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PlayerAnimationHandler : MonoBehaviour
 {
-    public GameObject LeftLeg, RightLeg, FastLeftLeg, FastRightLeg, JumpSpring, DoubleJumpBooster, DashForwardBooster, DashBackBooster;
-    Animator LeftLegAnimator, RightLegAnimator, FastLeftLegAnimator, FastRightLegAnimator, JumpSpringAnimator, DoubleJumpBoosterAnimator, DashForwardBoosterAnimator, DashBackBoosterAnimator;
+    public GameObject Body, LeftLeg, RightLeg, FastLeftLeg, FastRightLeg, JumpSpring, DoubleJumpBooster, DashForwardBooster, DashBackBooster;
+    Animator BodyAnimator, LeftLegAnimator, RightLegAnimator, FastLeftLegAnimator, FastRightLegAnimator, JumpSpringAnimator, DoubleJumpBoosterAnimator, DashForwardBoosterAnimator, DashBackBoosterAnimator;
     Player player;
 
     Dictionary<MechanicBase, GameObject> mechanicGOPairs = new Dictionary<MechanicBase, GameObject>();
@@ -13,6 +13,7 @@ public class PlayerAnimationHandler : MonoBehaviour
     void Start()
     {
         player = GetComponent<Player>();
+        BodyAnimator = Body.GetComponent<Animator>();
         LeftLegAnimator = LeftLeg.GetComponent<Animator>();
         RightLegAnimator = RightLeg.GetComponent<Animator>();
         FastLeftLegAnimator = FastLeftLeg.GetComponent<Animator>();
@@ -35,6 +36,7 @@ public class PlayerAnimationHandler : MonoBehaviour
 
     void WalkingAnimation()
     {
+        BodyAnimator.SetBool("Crouching", player.IsCrouching);
         LeftLegAnimator.SetInteger("HorizontalVelocity", player.IsGrounded ? (int)player.ModifiedHorizontalVelocity : 0);
         RightLegAnimator.SetInteger("HorizontalVelocity", player.IsGrounded ? (int)player.ModifiedHorizontalVelocity : 0);
         FastLeftLegAnimator.SetInteger("HorizontalVelocity", player.IsGrounded ? (int)player.ModifiedHorizontalVelocity : 0);

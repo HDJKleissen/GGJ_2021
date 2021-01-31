@@ -8,13 +8,14 @@ public static class GameInputManager
     {
         { "MoveLeft", KeyCode.A },
         { "MoveRight", KeyCode.D },
-        { "Jump", KeyCode.S },
-        { "DoubleJump", KeyCode.S },
+        { "Jump", KeyCode.W },
+        { "DoubleJump", KeyCode.W },
         { "Dash", KeyCode.Z },
         { "BackDash",KeyCode.X },
         { "Right", KeyCode.C },
         { "Pause", KeyCode.P },
         { "Restart", KeyCode.R },
+        { "Crouch", KeyCode.S }
     };
 
     public static void SetKeyMap(string keyMap, KeyCode key)
