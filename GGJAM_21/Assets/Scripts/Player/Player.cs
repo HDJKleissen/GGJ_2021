@@ -10,12 +10,12 @@ public class Player : MonoBehaviour
     public float JumpBufferTime;
     public float MaxPlayerFallSpeed;
     public float PlayerFloatSpeed;
-
+    public float MaxPlayerSpeed;
     public float PlayerGravity = 4;
     public float RunSpeedModifier = 0;
     [HideInInspector]
     public float DashSpeed = 0;
-    public float HorizontalVelocity, ModifiedHorizontalVelocity;
+    public float PlayerInputLeft, PlayerInputRight, ModifiedHorizontalVelocity;
     public bool IsGrounded;
     public bool IsDashing = false;
     public bool IsRunning = false;
@@ -78,13 +78,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!IsDashing)
-        {
-            HorizontalVelocity = 0;
-        }
         foreach (MechanicBase mechanic in GetMechanics(true))
         {
-            mechanic.ApplyMechanic(this);
+            mechanic.ApplyMechanic();
         }
     }
 
@@ -96,6 +92,7 @@ public class Player : MonoBehaviour
 
         if (!IsGrounded)
         {
+            // Coyote time, reset sprite to vertical, max height float
             SpriteTransform.localPosition = Vector3.zero;
             SpriteTransform.rotation = Quaternion.identity;
             if (IsGrounded != previousIsGrounded)
@@ -122,9 +119,10 @@ public class Player : MonoBehaviour
                 {
                     PlayerGravity = 4;
                 }
+                playerRigidBody.gravityScale = PlayerGravity;
             }
         }
-        // We're on the ground, so reset jump amount
+        // We're on the ground, so reset jump amount (isgrounded && !previousisgrounded)
         else if(!previousIsGrounded)
         {
             if (JumpsRemaining != MaxJumps)
@@ -132,18 +130,29 @@ public class Player : MonoBehaviour
                 JumpsRemaining = MaxJumps;
             }
         }
-        playerRigidBody.gravityScale = PlayerGravity;
 
-        if (HorizontalVelocity != 0)
+        // If there's input, we want to glide along everything
+        if (PlayerInputLeft != 0 || PlayerInputRight != 0)
         {
             playerRigidBody.sharedMaterial.friction = 0f;
-            facing = (int)Mathf.Sign(HorizontalVelocity);
+            if(PlayerInputLeft != 0)
+            {
+                facing = -1;
+            }
+            else if (PlayerInputRight != 0)
+            {
+                facing = 1;
+            }
+            // If both keys are pressed, don't change facing.
         }
         else
         {
+            // No input, so set enormously high friction so the player stands still on slopes
             playerRigidBody.sharedMaterial.friction = 9999;
         }
-        ModifiedHorizontalVelocity = HorizontalVelocity;
+
+        // Merge horizontal inputs
+        ModifiedHorizontalVelocity = PlayerInputRight + PlayerInputLeft;
 
         if (IsDashing)
         {
@@ -156,8 +165,21 @@ public class Player : MonoBehaviour
         }
 
         BodyTransform.localScale = new Vector3(facing, BodyTransform.localScale.y, BodyTransform.localScale.z);
+        float newVelocity = 0;
 
-        playerRigidBody.velocity = new Vector2(ModifiedHorizontalVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
+        if(ModifiedHorizontalVelocity < 0)
+        {
+            newVelocity = Mathf.Lerp(Mathf.Min(ModifiedHorizontalVelocity, playerRigidBody.velocity.x), 0, Time.fixedDeltaTime);
+        }
+        else if(ModifiedHorizontalVelocity > 0)
+        {
+            newVelocity = Mathf.Lerp(Mathf.Max(ModifiedHorizontalVelocity, playerRigidBody.velocity.x), 0, Time.fixedDeltaTime);
+        }
+        else
+        {
+            newVelocity = Mathf.Lerp(playerRigidBody.velocity.x, 0, Time.fixedDeltaTime);
+        }
+        playerRigidBody.velocity = new Vector2(newVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
 
         // Hacky shit to have a correct friction on the physics 2D material (HAS BEEN A BUG FOR 5 YEARS FUCK YOU UNITY)
         playerBoxCollider.enabled = false;

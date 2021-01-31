@@ -7,11 +7,15 @@ public abstract class JumpMechanicAbstract : MechanicBase
 
     public abstract int JumpAmount { get; }
 
-    public override void SetupMechanic(Player player)
+    public override void SetupMechanic()
     {
     }
 
-    public override void ApplyMechanic(Player player)
+    public override void ShutdownMechanic()
+    {
+    }
+
+    public override void ApplyMechanic()
     {
         if (player.MaxJumps < JumpAmount)
         {

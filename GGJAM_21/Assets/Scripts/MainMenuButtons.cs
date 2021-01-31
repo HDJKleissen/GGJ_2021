@@ -26,7 +26,6 @@ public class MainMenuButtons : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quit click");
         Application.Quit();
     }
 }
