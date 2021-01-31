@@ -10,7 +10,7 @@ public class RandomlyFlyOverScreen : MonoBehaviour
     void Start()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
-        StartNewRun();
+        StartCoroutine(CoroutineHelper.DelaySeconds(() => StartNewRun(), Random.Range(8, 20)));
     }
 
     // Update is called once per frame

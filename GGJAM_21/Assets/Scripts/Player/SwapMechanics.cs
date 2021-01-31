@@ -84,11 +84,18 @@ public class SwapMechanics : MonoBehaviour
         //right now shouldnt need to be inside a coroutine
         while (true)
         {
-            if(newMechanic == "DoubleJump")
+            if (newMechanic == "DoubleJump")
             {
                 if (nameMechanicPairs["Jump"].MechanicIsActive)
                 {
                     nameMechanicPairs["Jump"].MechanicIsActive = false;
+                }
+            }
+            if (newMechanic == "Jump")
+            {
+                if (nameMechanicPairs["DoubleJump"].MechanicIsActive)
+                {
+                    nameMechanicPairs["DoubleJump"].MechanicIsActive = false;
                 }
             }
             nameMechanicPairs[newMechanic].MechanicIsActive = true;

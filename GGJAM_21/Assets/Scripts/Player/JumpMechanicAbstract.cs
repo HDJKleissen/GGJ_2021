@@ -13,6 +13,7 @@ public abstract class JumpMechanicAbstract : MechanicBase
 
     public override void ShutdownMechanic()
     {
+        player.MaxJumps = 0;
     }
 
     public override void ApplyMechanic()
