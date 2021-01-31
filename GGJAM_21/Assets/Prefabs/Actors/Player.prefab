@@ -1227,8 +1227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxJumps: 0
   JumpsRemaining: 0
-  JumpGraceTime: 0.2
-  JumpBufferTime: 0.2
+  JumpGraceTime: 0.1
+  JumpBufferTime: 0.1
   MaxPlayerFallSpeed: 15
   PlayerFloatSpeed: 8
   MaxPlayerSpeed: 8
@@ -1242,6 +1242,7 @@ MonoBehaviour:
   IsDashing: 0
   IsRunning: 0
   IsCrouching: 0
+  CanControl: 0
   SpriteTransform: {fileID: 2051019297}
   BodyTransform: {fileID: 1892539166}
   GroundedCheckTopLeft: {fileID: 88916418}
@@ -1259,6 +1260,7 @@ MonoBehaviour:
   DoubleJumpTransform: {fileID: 224723118}
   DashFrontTransform: {fileID: 1169073788}
   DashBackTransform: {fileID: 545033812}
+  playerRigidBody: {fileID: 0}
   RotationDestination: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &7602161008589237280
 MonoBehaviour:

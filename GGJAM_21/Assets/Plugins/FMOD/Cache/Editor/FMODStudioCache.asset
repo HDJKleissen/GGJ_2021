@@ -560,7 +560,7 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
---- !u!114 &-6298833527038685652
+--- !u!114 &-6084818672303495693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -570,12 +570,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Jump/JumpNumber
+  m_Name: parameter:/Music/Beat
   m_EditorClassIdentifier: 
-  Name: JumpNumber
-  Min: 1
-  Max: 10
-  Default: 1
+  Name: Beat
+  Min: 0
+  Max: 1
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -595,11 +595,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-<<<<<<< Updated upstream
-  lastModified: 637477024909611393
-=======
   lastModified: 637477012468293201
->>>>>>> Stashed changes
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -828,14 +824,30 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-<<<<<<< Updated upstream
-  - {fileID: -1716909004146924163}
-=======
-  - {fileID: -6298833527038685652}
->>>>>>> Stashed changes
+  - {fileID: 6765496268961512268}
   MinDistance: 0
   MaxDistance: 0
   Length: 687
+--- !u!114 &-5068568932709239346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Bleeps
+  m_EditorClassIdentifier: 
+  Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5056869365862066832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,11 +997,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
   Name: SFX_Bank
   StudioPath: bank:/SFX_Bank
-<<<<<<< Updated upstream
-  lastModified: 637477014549995566
-=======
-  lastModified: 637477012468632287
->>>>>>> Stashed changes
+  lastModified: 637477024910100091
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1607,11 +1615,7 @@ MonoBehaviour:
   - {fileID: 8443850305616478101}
   StringsBanks:
   - {fileID: -6076671678044556201}
-<<<<<<< Updated upstream
-  stringsBankWriteTime: 637477014549816059
-=======
-  stringsBankWriteTime: 637477012468293201
->>>>>>> Stashed changes
+  stringsBankWriteTime: 637477024909611393
   cacheVersion: 6
 --- !u!114 &138193248504268400
 MonoBehaviour:
@@ -2641,11 +2645,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Music_Bank.bank
   Name: Music_Bank
   StudioPath: bank:/Music_Bank
-<<<<<<< Updated upstream
-  lastModified: 637476990108394421
-=======
-  lastModified: 637477012468841740
->>>>>>> Stashed changes
+  lastModified: 637477024909910592
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -2795,6 +2795,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &6765496268961512268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6914794415563902687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,6 +2916,26 @@ MonoBehaviour:
   m_Name: parameter:/Music/Bleeps
   m_EditorClassIdentifier: 
   Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &7661414832558217332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/GlitchHat
+  m_EditorClassIdentifier: 
+  Name: GlitchHat
   Min: 0
   Max: 1
   Default: 0
@@ -3088,11 +3128,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-<<<<<<< Updated upstream
-  lastModified: 637475644869966516
-=======
-  lastModified: 637476376376249968
->>>>>>> Stashed changes
+  lastModified: 637476121050454873
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -3116,15 +3152,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-<<<<<<< Updated upstream
-  - {fileID: 4273671131204624708}
-  - {fileID: -7572705562600918428}
-  - {fileID: 8635178100959329443}
-=======
-  - {fileID: -6876364818560540915}
-  - {fileID: 3173481429608475806}
-  - {fileID: 5485503079285184910}
->>>>>>> Stashed changes
+  - {fileID: -6084818672303495693}
+  - {fileID: 7661414832558217332}
+  - {fileID: -5068568932709239346}
   MinDistance: 0
   MaxDistance: 0
   Length: 60080
