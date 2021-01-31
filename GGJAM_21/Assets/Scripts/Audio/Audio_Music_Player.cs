@@ -21,6 +21,10 @@ public class Audio_Music_Player : MonoBehaviour
 
     private void Update()
     {
+        if (player == null)
+        {
+            player = GameObject.Find("Player").GetComponent<SwapMechanics>();
+        }
         checkTheVibe();
     }
 
