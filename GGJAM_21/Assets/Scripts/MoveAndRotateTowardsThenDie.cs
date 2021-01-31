@@ -17,7 +17,7 @@ public class MoveAndRotateTowardsThenDie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, Destination.position) < 0.1f && Quaternion.Angle(transform.rotation, Destination.rotation) < 2)
+        if(Vector3.Distance(transform.position, Destination.position) < 0.5f && Quaternion.Angle(transform.rotation, Destination.rotation) < 5)
         {
             Destroy(gameObject);
             if (DestroyDestination)
