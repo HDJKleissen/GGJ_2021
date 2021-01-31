@@ -8,6 +8,12 @@ public class Audio_Player_Sounds : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Footstep");
     }
 
+    void PlayRunSound()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RunFootstep");
+
+    }
+
     void PlayFirstJumpSound()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Jump");
