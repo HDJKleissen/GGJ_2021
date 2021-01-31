@@ -157,11 +157,8 @@ public class Player : MonoBehaviour
 
         BodyTransform.localScale = new Vector3(facing, BodyTransform.localScale.y, BodyTransform.localScale.z);
 
-        Debug.Log("modihorivelo " + ModifiedHorizontalVelocity);
-
         playerRigidBody.velocity = new Vector2(ModifiedHorizontalVelocity, Mathf.Max(playerRigidBody.velocity.y, -MaxPlayerFallSpeed));
 
-        Debug.Log("playribovelo " + playerRigidBody.velocity);
         // Hacky shit to have a correct friction on the physics 2D material (HAS BEEN A BUG FOR 5 YEARS FUCK YOU UNITY)
         playerBoxCollider.enabled = false;
         playerBoxCollider.enabled = true;
@@ -188,9 +185,29 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "goal")
         {
-            //go next scene
-            SceneManager.LoadScene("Level2");
+            string currentScene = SceneManager.GetActiveScene().name;
+
+            int currLevelNum = LevelNames.LevelNameToLevelNum[currentScene];
+            int nextLevelNum = currLevelNum + 1;
+
+            if (LevelNames.LevelNumToLevelName.ContainsKey(nextLevelNum))
+            {
+                SceneManager.LoadScene(LevelNames.LevelNumToLevelName[nextLevelNum]);
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
+        else if(collision.gameObject.tag == "Killbox")
+        {
+            StartCoroutine(CoroutineHelper.DelaySeconds(() => Die(), 2));
+        }
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Jump(float jumpForce)
