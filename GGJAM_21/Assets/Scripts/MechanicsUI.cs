@@ -7,9 +7,9 @@ public class MechanicsUI : MonoBehaviour
 {
     public Player player;
 
-    Dictionary<MechanicBase, Image> mechanicImagePairs = new Dictionary<MechanicBase, Image>();
+    Dictionary<MechanicBase, GameObject> mechanicImagePairs = new Dictionary<MechanicBase, GameObject>();
 
-    public Image MoveLeft, MoveRight, Run, Jump, DoubleJump, DashForward, DashBack;
+    public GameObject MoveLeft, MoveRight, Run, Jump, DoubleJump, DashForward, DashBack;
 
     public Color ActivatedColor, DeactivatedColor;
 
@@ -35,15 +35,15 @@ public class MechanicsUI : MonoBehaviour
 
     public void CheckActivatedMechanics()
     {
-        foreach (KeyValuePair<MechanicBase, Image> kvp in mechanicImagePairs)
+        foreach (KeyValuePair<MechanicBase, GameObject> kvp in mechanicImagePairs)
         {
             if (kvp.Key.MechanicIsActive)
             {
-                kvp.Value.color = ActivatedColor;
+                kvp.Value.gameObject.SetActive(true);
             }
             else
             {
-                kvp.Value.color = DeactivatedColor;
+                kvp.Value.gameObject.SetActive(false);
             }
         }
     }
