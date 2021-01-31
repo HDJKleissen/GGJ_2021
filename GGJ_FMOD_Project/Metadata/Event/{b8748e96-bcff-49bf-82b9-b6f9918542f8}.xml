@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{fc691e14-b769-40f3-bc5a-d1f7bcf14c5d}">
+		<property name="volume">
+			<value>-9.5</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{e59cdbe2-6fd6-4b77-8d46-81c703b9b312}</destination>
 		</relationship>
@@ -100,6 +103,9 @@
 		</property>
 		<property name="length">
 			<value>184</value>
+		</property>
+		<property name="looping">
+			<value>true</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{06c84826-650c-493d-bb7c-17e122a3f125}</destination>

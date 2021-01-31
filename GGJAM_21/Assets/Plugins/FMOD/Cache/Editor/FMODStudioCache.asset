@@ -40,6 +40,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-8588664451689794289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-8575498326218593476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +99,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8195184833372936179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +140,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-7932770584095860866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Bleeps
+  m_EditorClassIdentifier: 
+  Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-7911272320203992400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,11 +449,11 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476912429475228
+  lastModified: 637477001380000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1440
+    Value: 1608
   Exists: 1
 --- !u!114 &-5970227692277252912
 MonoBehaviour:
@@ -498,6 +538,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-5659406024001085881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/GlitchHat
+  m_EditorClassIdentifier: 
+  Name: GlitchHat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5559434713259282395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,6 +591,26 @@ MonoBehaviour:
   m_Name: parameter:/Music/Bleeps
   m_EditorClassIdentifier: 
   Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-5403051786913112785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Beat
+  m_EditorClassIdentifier: 
+  Name: Beat
   Min: 0
   Max: 1
   Default: 0
@@ -598,7 +678,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -9153230642719083118}
+  - {fileID: 8892609955954120663}
   MinDistance: 0
   MaxDistance: 0
   Length: 687
@@ -647,7 +727,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 1671
+  Length: 2890
 --- !u!114 &-4465434032159469017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +808,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
   Name: SFX_Bank
   StudioPath: bank:/SFX_Bank
-  lastModified: 637476912430053683
+  lastModified: 637477001380000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -751,7 +831,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3739610586402700220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,7 +935,7 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
---- !u!114 &-3494778974878716608
+--- !u!114 &-3189746925057789828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -874,7 +954,27 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &-3083410844770919506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-2729710082975702725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,7 +1015,7 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
---- !u!114 &-2327018050853543200
+--- !u!114 &-2346545411357291242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -934,7 +1034,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2156994214404852737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,7 +1054,27 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &-2058870849652444334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Bleeps
+  m_EditorClassIdentifier: 
+  Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-1899660857004433681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,6 +1095,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-1771368826178451349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Land
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Land
+  guid: 9da43bc7e404804eb68249a4d7928014
+  Banks:
+  - {fileID: -4214780196477674076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 375
 --- !u!114 &-1477370017039483835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,6 +1141,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 890
+--- !u!114 &-1420180462937234218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Bleeps
+  m_EditorClassIdentifier: 
+  Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1383128202442477438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,6 +1180,46 @@ MonoBehaviour:
   ID:
     data1: 4079890638
     data2: 443462332
+  Exists: 1
+--- !u!114 &-1175913721246526995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Bleeps
+  m_EditorClassIdentifier: 
+  Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-908372403582505206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/GlitchHat
+  m_EditorClassIdentifier: 
+  Name: GlitchHat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-878313305850778358
 MonoBehaviour:
@@ -1128,12 +1331,16 @@ MonoBehaviour:
   - {fileID: -1477370017039483835}
   - {fileID: -5841334162914533285}
   - {fileID: -4769913985132255858}
+  - {fileID: 4171971529072877807}
+  - {fileID: 1917341410686988908}
+  - {fileID: 6357156343916571857}
+  - {fileID: -1771368826178451349}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8443850305616478101}
   StringsBanks:
   - {fileID: -6076671678044556201}
-  stringsBankWriteTime: 637476912429475228
+  stringsBankWriteTime: 637477001380000000
   cacheVersion: 6
 --- !u!114 &138193248504268400
 MonoBehaviour:
@@ -1195,6 +1402,46 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &640114066697187488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Beat
+  m_EditorClassIdentifier: 
+  Name: Beat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &870634225137129190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Bleeps
+  m_EditorClassIdentifier: 
+  Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1178601733824451076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1318,6 +1565,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &1409653238893369254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/GlitchHat
+  m_EditorClassIdentifier: 
+  Name: GlitchHat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &1501288953531406530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,6 +1652,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &1917341410686988908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIConfirm
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIConfirm
+  guid: 86b39b50bc68c642b6263ae5cc9f1f91
+  Banks:
+  - {fileID: -4214780196477674076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 625
 --- !u!114 &2188318099167482313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1508,6 +1798,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &3157199444344070500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Beat
+  m_EditorClassIdentifier: 
+  Name: Beat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &3292515921246800020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,6 +1941,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &4171971529072877807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIBack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIBack
+  guid: 52598c562c758b4cabbd5cb45d4dc451
+  Banks:
+  - {fileID: -4214780196477674076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 750
 --- !u!114 &4409387312501159712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1692,6 +2025,26 @@ MonoBehaviour:
     data2: 0
   Exists: 0
 --- !u!114 &4704681198553650806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &4740194414344036368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1836,6 +2189,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 60080
+--- !u!114 &5518703970552571289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &5581456415882879723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1851,7 +2224,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Music_Bank.bank
   Name: Music_Bank
   StudioPath: bank:/Music_Bank
-  lastModified: 637476912429854332
+  lastModified: 637477001380000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1898,6 +2271,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 695
+--- !u!114 &6357156343916571857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Win
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Win
+  guid: 5ea18b966ebe084eb1cb870a465b7cff
+  Banks:
+  - {fileID: -4214780196477674076}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1562
 --- !u!114 &6399563129827206596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1918,6 +2314,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &6587901412164909121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &6719911289484214083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,7 +2353,27 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &6748448042571659319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &6914794415563902687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2000,11 +2436,11 @@ MonoBehaviour:
   Banks:
   - {fileID: -4214780196477674076}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
   Length: 875
 --- !u!114 &7015834788438177740
 MonoBehaviour:
@@ -2211,7 +2647,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637475644869966516
+  lastModified: 637477001380000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -2235,12 +2671,52 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3494778974878716608}
-  - {fileID: -2327018050853543200}
-  - {fileID: 5663102851303218447}
+  - {fileID: 8695221495917849693}
+  - {fileID: -908372403582505206}
+  - {fileID: -1420180462937234218}
   MinDistance: 0
   MaxDistance: 0
   Length: 60080
+--- !u!114 &8695221495917849693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Beat
+  m_EditorClassIdentifier: 
+  Name: Beat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &8745592899412354820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/GlitchHat
+  m_EditorClassIdentifier: 
+  Name: GlitchHat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &8820201894197705060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2264,6 +2740,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 375
+--- !u!114 &8892609955954120663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &8961588983246919628
 MonoBehaviour:
   m_ObjectHideFlags: 0

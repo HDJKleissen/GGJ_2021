@@ -218,6 +218,18 @@ MonoBehaviour:
           m_StringArgument: Sandbox
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7859662203421559665}
+        m_TargetAssemblyTypeName: UI_Sounds, Assembly-CSharp
+        m_MethodName: PlayConfirmSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &415526514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1701,6 +1713,7 @@ GameObject:
   - component: {fileID: 7859662203421559660}
   - component: {fileID: 7859662203421559663}
   - component: {fileID: 7859662203421559664}
+  - component: {fileID: 7859662203421559665}
   m_Layer: 5
   m_Name: MainMenuButtons
   m_TagString: Untagged
@@ -1738,6 +1751,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuButtons: []
+--- !u!114 &7859662203421559665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7859662203421559662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5aa621e2741544a5ab1f43cddd0bc71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7859662204394681617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,6 +1896,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7859662203421559665}
+        m_TargetAssemblyTypeName: UI_Sounds, Assembly-CSharp
+        m_MethodName: PlayConfirmSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &7859662204525196244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1938,6 +1975,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7859662203421559664}
         m_TargetAssemblyTypeName: MainMenuButtons, Assembly-CSharp
         m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7859662203421559665}
+        m_TargetAssemblyTypeName: UI_Sounds, Assembly-CSharp
+        m_MethodName: PlayBackSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
