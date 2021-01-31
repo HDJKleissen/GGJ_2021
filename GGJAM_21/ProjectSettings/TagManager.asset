@@ -8,6 +8,8 @@ TagManager:
   - goal
   - Killbox
   - MechanicsUI
+  - music
+  - ambiance
   layers:
   - Default
   - TransparentFX
