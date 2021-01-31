@@ -186,10 +186,18 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "goal")
         {
             string currentScene = SceneManager.GetActiveScene().name;
-            string[] splitName = currentScene.Split('_');
-            int levelNum = int.Parse(splitName[1]);
-            //go next scene
-            SceneManager.LoadScene("Level_" + (levelNum+1));
+
+            int currLevelNum = LevelNames.LevelNameToLevelNum[currentScene];
+            int nextLevelNum = currLevelNum + 1;
+
+            if (LevelNames.LevelNumToLevelName.ContainsKey(nextLevelNum))
+            {
+                SceneManager.LoadScene(LevelNames.LevelNumToLevelName[nextLevelNum]);
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
         else if(collision.gameObject.tag == "Killbox")
         {

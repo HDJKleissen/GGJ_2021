@@ -15,7 +15,7 @@ public class MainMenuButtons : MonoBehaviour
 
     public void StartGame()
     {
-        LoadScene("Level0");
+        LoadScene("Level_0");
     }
 
     public void LoadScene(string sceneName)
