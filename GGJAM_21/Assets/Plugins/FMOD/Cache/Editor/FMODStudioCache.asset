@@ -269,7 +269,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476576946676383
+  lastModified: 637476813939363781
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -458,7 +458,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 1193984235172507869}
+  - {fileID: 4535648691818723786}
   MinDistance: 0
   MaxDistance: 0
   Length: 687
@@ -565,7 +565,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/SFX_Bank.bank
   Name: SFX_Bank
   StudioPath: bank:/SFX_Bank
-  lastModified: 637476576946865875
+  lastModified: 637476813940121757
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -755,6 +755,26 @@ MonoBehaviour:
     data1: 4079890638
     data2: 443462332
   Exists: 1
+--- !u!114 &-878313305850778358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Beat
+  m_EditorClassIdentifier: 
+  Name: Beat
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-556540701793708299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +869,7 @@ MonoBehaviour:
   - {fileID: 8443850305616478101}
   StringsBanks:
   - {fileID: -6076671678044556201}
-  stringsBankWriteTime: 637476576946676383
+  stringsBankWriteTime: 637476813939363781
   cacheVersion: 6
 --- !u!114 &208574260764303359
 MonoBehaviour:
@@ -930,6 +950,26 @@ MonoBehaviour:
   Min: 1
   Max: 10
   Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &1222104824133004152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/GlitchHat
+  m_EditorClassIdentifier: 
+  Name: GlitchHat
+  Min: 0
+  Max: 1
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -1267,6 +1307,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &4122828436580056878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Bleeps
+  m_EditorClassIdentifier: 
+  Name: Bleeps
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4409387312501159712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,6 +1367,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &4535648691818723786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump/JumpNumber
+  m_EditorClassIdentifier: 
+  Name: JumpNumber
+  Min: 1
+  Max: 10
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4704681198553650806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,7 +1547,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Music_Bank.bank
   Name: Music_Bank
   StudioPath: bank:/Music_Bank
-  lastModified: 637476539709817729
+  lastModified: 637476813939862446
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1787,7 +1867,7 @@ MonoBehaviour:
   Path: ../GGJ_FMOD_Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476121050454873
+  lastModified: 637475644869966516
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1811,9 +1891,9 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5559434713259282395}
-  - {fileID: 1392159980236195430}
-  - {fileID: -5387892591482710910}
+  - {fileID: -878313305850778358}
+  - {fileID: 1222104824133004152}
+  - {fileID: 4122828436580056878}
   MinDistance: 0
   MaxDistance: 0
   Length: 60080
