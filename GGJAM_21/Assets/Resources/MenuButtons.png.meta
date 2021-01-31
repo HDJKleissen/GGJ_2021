@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: 9060215553278879933
     second: MenuButtons_2
+  - first:
+      213: -3341821493477967250
+    second: MenuButtons_3
+  - first:
+      213: 6477783469407055815
+    second: MenuButtons_4
+  - first:
+      213: 5219332785165633450
+    second: MenuButtons_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +148,7 @@ TextureImporter:
       name: MenuButtons_0
       rect:
         serializedVersion: 2
-        x: 98
+        x: 20
         y: 376
         width: 304
         height: 109
@@ -160,7 +169,7 @@ TextureImporter:
       name: MenuButtons_1
       rect:
         serializedVersion: 2
-        x: 98
+        x: 20
         y: 249
         width: 303
         height: 110
@@ -181,7 +190,7 @@ TextureImporter:
       name: MenuButtons_2
       rect:
         serializedVersion: 2
-        x: 94
+        x: 16
         y: 5
         width: 310
         height: 142
@@ -194,6 +203,69 @@ TextureImporter:
       bones: []
       spriteID: db828a9ea0a5cbd70800000000000000
       internalID: 9060215553278879933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_3
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 374
+        width: 120
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6afa72be077f91d0800000000000000
+      internalID: -3341821493477967250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 244
+        width: 121
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cfa7e1aeb5b5e950800000000000000
+      internalID: 6477783469407055815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuButtons_5
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 24
+        width: 134
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa70950d38bce6840800000000000000
+      internalID: 5219332785165633450
       vertices: []
       indices: 
       edges: []
