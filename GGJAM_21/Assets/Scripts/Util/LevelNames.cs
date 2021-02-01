@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public static class LevelNames
 {
 
-    static int NON_LEVEL_SCENES_IN_BUILD_SETTINGS = 3;
+    static int NON_LEVEL_SCENES_IN_BUILD_SETTINGS = 4;
 
     public static Dictionary<int, string> LevelNumToLevelName = new Dictionary<int, string>();
 
