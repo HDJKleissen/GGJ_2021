@@ -253,6 +253,7 @@ public class Player : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Killbox")
         {
+            CanControl = false;
             FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Death");
             StartCoroutine(CoroutineHelper.DelaySeconds(() => Die(), 2));
         }

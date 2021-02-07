@@ -20,20 +20,27 @@ public class CameraController : MonoBehaviour
         {
             Vector3 acTarPos = actualTarget.transform.position;
             transform.position = new Vector3(acTarPos.x, acTarPos.y, transform.position.z);
-            StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+            StartCoroutine(CoroutineHelper.Chain(CoroutineHelper.DelaySeconds(() =>
             {
                 actualTarget = target;
-                playerScript.CanControl = true;
-            }, 2f));
-            StartCoroutine(CoroutineHelper.DelaySeconds(() =>
+            }, 2f),
+                CoroutineHelper.WaitUntil(() => actualTarget.transform.position.x - transform.position.x < 0.5f || actualTarget.transform.position.y - transform.position.y < 0.5f),
+                CoroutineHelper.Do(() =>
             {
                 playerScript.playerRigidBody.bodyType = RigidbodyType2D.Dynamic;
-            }, 2.5f));
+                playerScript.CanControl = true;
+            })));
         }
         else
         {
             actualTarget = target;
         }
+    }
+    private void Update()
+    {
+        Debug.Log("----------------");
+        Debug.Log(Vector2.Distance(actualTarget.transform.position, transform.position));
+        Debug.Log(Vector2.Distance(new Vector2(actualTarget.transform.position.x, actualTarget.transform.position.y), new Vector2(transform.position.x, transform.position.y)));
     }
 
     // Update is called once per frame
